@@ -1,11 +1,13 @@
 ﻿#Qual A Receita
-?
+
 --------------1. SOBRE O SITE------------------
+
 Meu objetivo com esse site é ter um site para buscar as receitas pelo o que eu tenho na geladeira e nos armários, da forma mais prática e rápida que possível. Eu simplesmente abrir o site, digitar os ingredientes e já saber tudo o que posso fazer com eles. Não vi isso em outros sites então acho isso uma novidade.
 
 
 
 Em pauta tudo que vejo que pode dar certo e errado, pontos positivos e negativos:
+
 1.1. Positivo:
 - Dependendo dos ingredientes podem haver milhares de receitas. Por exemplo, "trigo", pode-se fazer macarrão, pão, bolo etc...
 - Tabela nutricional com tudo o que está comendo.
@@ -70,22 +72,23 @@ HOME - Onde está o Feed de Receitas e onde o User pode buscar novas receitas
 HOME>MENU
 Botões:
 - Menu Esquerdo
- - Home
- - Nova Receita
- - Contato
+  - Home
+  - Nova Receita
+  - Contato
 - Caixa de Texto Pesquisa 
 - Pesquisar
 - Filtro
- -
+ 
+ 
 - Menu Direito (Perfil)
- - Armário
- - Procurar Receitas
- - Favoritos
- - Lista
- - Minhas Receitas
- - Perfil
- - Estatísticas (Calendário e Tabela nutricional) (Ainda não pronto)
- - 
+  - Armário
+  - Procurar Receitas
+  - Favoritos
+  - Lista
+  - Minhas Receitas
+  - Perfil
+  - Estatísticas (Calendário e Tabela nutricional) (Ainda não pronto)
+  
 
 
 HOME>MENU>CAIXA_DE_TEXTO_PESQUISA:
@@ -183,14 +186,7 @@ O que vai na receita e, também, é possível filtrar receitas por:
 - Tempo de Preparo
 - Rende x Porções
 - Ingredientes
-  ~Ao escrever um ingrediente, como 2 colheres de Sopa de açúcar, tem que ter a função auto-complete, 
-	-2 Colheres
-		    DE CHÁ
-		    DE CAFÉ
-		    DE SOPA. *User Clica nesse.
-	-2 Colheres De Sopa De Aç
-				 úcar (Imagem de açúcar) *User Aperta Enter
-	-2 Colheres De Sopa De Açúcar. *No sistema já tem indexado qual volume é uma colher de sopa e o que é Açúcar (Quantos Carboidratos, Valor Energético, qual é a densidade do açúcar etc.)
+  ~Ao escrever um ingrediente, como 2 colheres de Sopa de açúcar, tem que ter a função auto-complete, -2 Colheres| (DE CHÁ)(DE CAFÉ)(DE SOPA) *User Clica no de Sopa. -2 Colheres De Sopa De Aç| (ÚCAR (Imagem de açúcar)) *User Aperta Enter. *No sistema já tem indexado qual volume é uma colher de sopa e o que é Açúcar (Quantos Carboidratos, Valor Energético, qual é a densidade do açúcar etc.)
   ~Caso não tenha no sistema registrado o Açúcar, o usúario clica [Novo Ingrediente], e digita o novo ingrediente e o que sabe sobre ele.
 
 
