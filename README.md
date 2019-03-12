@@ -27,6 +27,8 @@ Em pauta tudo que vejo que pode dar certo e errado, pontos positivos e negativos
  - Função de auto-completar busca. Ex. Nes|(Cau)
  - Aceitar pelo menos uma imagem por receita
  - Registro de uso de Receitas do User (Possível User deletar receita específica ou todo histórico)
+ - Receitas idênticas tem de ser mescladas/não-postada. (Mesmos ingredientes e quantidade de ingredientes que outra receita)
+ - Receitas semelhantes tem que ser categorizadas. (Mesmos ingredientes, quantidades diferentes de outras receitas. O intuito é variar o cardápio, fazer com que apareça receitas novas no feed, isso para evitar que apareça 200 receitas de panqueca seguidas só porque tem trigo. Panqueca aparece uma vez, só se repete se tiver o título da receita envolvido e não apenas os ingredientes.)
  
 1.4. Pontos opcionais/Bônus (pontos que não são obrigatórios, não precisam estar obrigatóriamente na primeira versão que o site for lançado, podem serem feitos mais tarde, ou até não serem feitos):
  - Calendário com quais receitas usou, quando usou e quanto usou. (também aplicado à uso pessoal, "quanto apenas eu comi")
@@ -86,6 +88,7 @@ Botões:
   - Favoritos
   - Lista
   - Minhas Receitas
+  - Lista de Compras (Bônus)
   - Perfil
   - Estatísticas (Calendário e Tabela nutricional) (Ainda não pronto)
   
@@ -95,6 +98,9 @@ HOME>MENU>CAIXA_DE_TEXTO_PESQUISA:
 - A Caixa de texto vai mostrar os ingredientes da mesma forma que esse site mostra as características (por balões): https://www.vivareal.com.br/aluguel/sp/sao-paulo/zona-sul/ipiranga/casa_residencial/#onde=BR-Sao_Paulo-NULL-Sao_Paulo-Zona_Sul-Ipiranga&tipos=casa_residencial,condominio_residencial
   *Tanto faz se esses balões vão estar dentro da caixa de texto, ou se vão estar fora da caixa de texto como nesse site (se for fora dá pra colocar em baixo junto com os filtros)
 
+Pesquisar por:
+ - Ingredientes
+ - Título Receita
 
 HOME>MENU>BOTÃO_FILTRO:
 
@@ -102,15 +108,19 @@ Ao Clicar Abre uma aba abaixo do menu, contendo os diversos tipos de filtros den
  - Pode conter...
  - Apenas se tiver...
  - Apenas se não tiver... (Ingredientes, lista de Ingredientes, lista de dieta como glúten, gordura trans, lactose, açúcar, sódio etc)
-
-
+ - No Mínimo/Máximo x número (ml/Litro/colherSopa) do ingrediente y. (Bônus)
+ - Botão [x] Usar todo armário (principal função do site, pode ter um nome melhor, tipo, SuperArmário, armárioTotal), quando habilitado, o fundo do filtro fica dourado com uma animação metálica reluzente. (Animação é um Bônus)
+ 
 Ordernar Por: 
  - Aleatório
  - Mais Visualizado
  - Mais Curtido
  - Ingredientes que mais/menos uso (ou usei nos ultimos x dias/semanas/meses)
  - Os mais vencidos ou próximos de vencer a validade [estimado pela data que o ingrediente foi colocado no armário (caso ainda não tenha sido colocado uma data de fabricação)]
- - 
+ - Lugar (País, Região) 
+ - Número de Likes
+ 
+Alerta de Alimento que não vai ser consumido - Caso a opção no filtro "usar todo armário" esteja habilitada, e tenha algum limitador do tipo "Até 200 calorias", alguns alimentos talvez nunca sejam usados por terem uma taxa alta de carboidratos, vindo de uma pessoa que não pode comer mais que 200 calorias, acho que seria interessante ela saber que talvez tenha algo que nunca vai comer... (Bônus)
 
 
 
@@ -130,6 +140,16 @@ HOME>BODY>RECEITAS:
 
 
 
+..............
+
+PERFIL:
+
+- Nome
+- Foto
+- Sobre
+- E-mail
+- Contato
+- Estatísticas do QualAReceita (Número de comentários, Número de receitas preparadas, Receita preferida, Número de receitas postadas, número de likes das receitas, número de views das receitas etc) (Bônus)
 
 
 
@@ -158,6 +178,7 @@ PERFIL>CONFIGURAÇÕES
 
 ON|OFF - Adicionar ao armário automáticamente ao pesquisar pelo produto - (Ao ficar ON, adiciona também um botão ao lado do ingrediente no momento que ele é pesquisado, para esse em específico ou também os próximos não serem adicionados ao armário automáticamente)
 
+ON|OFF - Aceitar receber receitas semelhantes no feed - Ao habilitar pode-se aparecer umas 200 panquecas, só por digitar trigo.
 
 
 
@@ -172,7 +193,15 @@ Ao Logar pela primeira vez:
  - Mensagem: "Faça nossa comunidade crescer! Adicione uma receita! 
    Ao postar a primeira receita:
     - Obrigado pela contribuição!
-
+    
+Perguntas de contribuição depois de selecionar uma receita, à cada 12 horas pode vir uma nova pergunta. (Acrescentar a opção: "Não sei/ Não tenho certeza")
+ - A Receita é: Almoço, Janta, sobremesa, lanche, aperitivo, bebida, etc.
+ - Tabela nutricional de cada ingrediente (com caixa pra responder de onde tirou a resposta)
+ - Materiais Necessários, microondas, Forno, etc
+ - A receita é Fria ou Quente? (Bônus)
+ - Qual país origem da receita? (Brasil, França, EUA etc) (Bônus)
+ - A Receita é Doce, Salgada, Amarga, Azeda, Agridoce? (Bônus) 
+ 
 CRIAR RECEITA - Detalhes sobre isso
 
 O que vai na receita e, também, é possível filtrar receitas por:
@@ -188,18 +217,37 @@ O que vai na receita e, também, é possível filtrar receitas por:
 - Ingredientes
   ~Ao escrever um ingrediente, como 2 colheres de Sopa de açúcar, tem que ter a função auto-complete, -2 Colheres| (DE CHÁ)(DE CAFÉ)(DE SOPA) *User Clica no de Sopa. -2 Colheres De Sopa De Aç| (ÚCAR (Imagem de açúcar)) *User Aperta Enter. *No sistema já tem indexado qual volume é uma colher de sopa e o que é Açúcar (Quantos Carboidratos, Valor Energético, qual é a densidade do açúcar etc.)
   ~Caso não tenha no sistema registrado o Açúcar, o usúario clica [Novo Ingrediente], e digita o novo ingrediente e o que sabe sobre ele.
-
+  - Não ter só valores como 3 colheres de café de sal, mas ter também À GOSTO.
+  - Se possível, permitir frações, 2/3 ou 4/6...
+  - Não é só colheres ou xícaras, mas também volume, como mililitros ou Litros.
 
  
 - Modo de preparo
-- Material necessário (Forno, Microondas Etc), isso é útil para o filtro (ex. Não tenho microondas). 
+- Material necessário (Forno, Microondas Etc), isso é útil para o ] (ex. Não tenho microondas). 
   Para não ficar tão cansativo, para cada receita ter que colocar que é feita no ex. "forno", poderia ficar à encargo de quem usa a receita verificar se é feita no forno, uma pessoa que usa a receita pode contribuir para ela, uma a pessoa só teria que responder uma pergunta ao selecionar/terminar a receita. (OPCIONAL Item 1.4.)
 - Quem postou a Receita 
 
 
 
+POSTAR RECEITA>NOVO INGREDIENTE:
+ Ingrediente tem que ter:
+  - Título/Nome do ingrediente (ex. Frango, Asa De Frango, Arroz, Ovo)
+  - Tipo (Ex. Ovo: Branco, Caipira)
+  - Veio de (Ex. Ovo: Galinha, Pato, Avestruz)
+  - Parte (ex. Frango: Coxa, SobreCoxa, Asa)
+  - ID (Algo único de cada ingrediente, para diferenciá-los caso haja dois diferentes com o mesmo nome)
+  - Tamanho (Ex. Ovo: Jumbo, Extra, Grande, Médio etc)
+  - Porção (90g / 2 unidades)
+    - Gramas/Kg
+    - Unidades (Se houver, ex. Ovo, Frango)
+    
+    
 
 Funções específicas:
+- _Caixa de Texto_ Ajustar Fator por Multiplicação (ajusta quantidade de todos os ingredientes em 2x, 3x, 0,5x etc... Ex. 2x -> 3 Ovos para 6 Ovos; 3x -> 3 Ovos para 9 Ovos; 0,5x -> 3 Ovos em 1,5 Ovos)
+- _Caixa de Texto_ Ajustar Fator por porções (Ajusta a quantidade de todos os ingredientes com base em quantas porções quer)
+- Botão e Caixa de Texto Ajustar Fator por algum ingrediente (Ajusta a quantidade de todos os ingredientes com base no quanto quer de um ingrediente, Ex. Receita: - 1 Kg De Trigo, 3 Xícaras de Açúcar; Aperta o botão ajustar fator por ingrediente, seleciona o trigo,  
+- [x] Selecionar ingredientes (Que serão retirados do Armário para usar na receita)
 - Botão de Like
 - Botão Compartilhar
   - Facebook
@@ -210,5 +258,6 @@ Funções específicas:
 - Denúncia (Bandeirinha para reportar a receita como imprópria)
 - Comentários
 - Botão Usar ingredientes nessa receita
+- Modo Economia de Ingredientes, 2 botões, um aciona outro configura (Dividir automaticamente os ingredientes para x número de dias para até x número de pessoas/porções. Ex. 2 Kg de trigo para 5 dias, até 2 pessoas, ex. 150g/pessoa por dia, isso dá 300g diarias para 2 pessoas, em 5 dias seria 1,5 Kg, simplesmente 300g/dia; Mas caso fosse para 3 pessoas, seria 150g * 3 pessoas * 5 dias = 2,25 Kg, isso passaria o limite, logo seria usado 2 Kg / 5 dias = 400g/dia) (Bônus)
 
 
