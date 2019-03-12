@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="anim.css">
+	<script src="js.js"></script>
+	<title>Qual Receita?</title><!--Até aqui código de sempre... Padrão-->
+</head>
+<body>
+
+<div id="menu" class="corPadraoFundo">
+		<div id="dropdown" class="left" ><!--menu do lado esquerdo-->
+			<button class="btnMenu imgMenu corPadraoFundo"><!--<img src="Imagens/Menu.svg" alt="Menu" class="imgPerfil"> --diferença entre img e button... o que for melhor----></button>
+				<div id="listSiteOpen" class="corPadraoFundo">
+					<a href="principal.html"><img src="Imagens/home.svg" class="icoMenu"><p class="textMenu">Home</p></a><!--Gosto de SVG, é escalável, não perde a qualidade... os icones podem ter formas simples-->
+					<a href="novaReceita.html"><img src="Imagens/newFile.svg" class="icoMenu"><p class="textMenu">Nova Receita</p></a><!--ainda preciso melhorar a proporção entre eles, um parece maior que o outro, e não estão perfeitamente centralizados-->
+					<div onclick="sobreFunction()"><a><img src="Imagens/contato.svg" class="icoMenu"><p class="textMenu">Contato</p></a></div>
+				</div>
+		</div>
+
+		<img src="Imagens/QualAReceitaLogo.svg" class="logo"><!--LOGO-->
+		<input type="text" id="inputPesq" class="inputPesq" placeholder="Procure por receitas aqui"/><!--Caixa de Texto, Procura de Itens,-->
+		<button class="btnMenu btnPesq corPadraoFundo"><!--botão de PESQUISA-->
+		</button>
+		<button id="btnMenu" class="btnMenu filtro corPadraoFundo"></button><!--FILTRO, ainda precisa desenvolver... uma lista com uma série de opções, dentre elas botões para filtrar por, exemp. "arroz" e "feijão"; receitas que não tenham ex. "vinagre", "glúten","Sal"; cada item com a relação OPCIONAL ou OBRIGATÓRIO ex. Opcional ter "orégano", obrigatório ter "manteiga"; Do meu armário/geladeira (ainda definir o nome) (aparece a lista de ingredientes do armário) quero apenas Pré-Lista (uma lista exata de ingredientes feita pela pessoa) ou Ingredientes ex. "Trigo" e "leite"; Do meu armário não quero apenas Pré-Lista ou Ingredientes ex. "pão", "carne"; ORDENAR POR (Mais uma série de opções, dentre elas: Aleatório, Mais vizualizado global, mais curtido, ingredientes que eu mais uso, os que estão passando da validade[estimado pela data que o ingrediente foi colocado no armário, caso ainda não tenha sido colocado uma data de fabricação], ); Bônus(Pode ser feito depois do site pronto, não é o foco): Filtrar por Data de Modificação; -->
+		
+
+		<div id="dropdown" class="right">
+			<button class="btnMenu NovoPerfil corPadraoFundo">
+				<!--<img src="Imagens/NovoPerfil.svg" alt="Perfil" class="imgPerfil">-->
+			</button>
+				<div id="listSiteOpen" class="right corPadraoFundo">
+					<a href=""><img src="Imagens/geladeira (3).svg" class="icoMenu"><p class="textMenu">Armário</p></a>
+					<a href=""><img src="Imagens/procuraReceita.svg" class="icoMenu"><p class="textMenu">Procurar Receitas</p></a>
+					<a href=""><img src="Imagens/favorite.svg" class="icoMenu"><p class="textMenu">Favoritos</p></a>
+					<a href=""><img src="Imagens/lista (1).svg" class="icoMenu"><p class="textMenu">Lista</p></a>
+					<a href=""><img src="Imagens/perfil.svg" class="icoMenu"><p class="textMenu">Perfil</p></a>
+				</div>
+		</div>
+</div>
+
+	<span class="popuptext" id="sobre" onclick="sobreFunction()"><div class="divFecharSobre"><img src="Imagens/fechar.svg" class="fecharSobre"></div><span class="copyrightText">Copyright</span></span><!--Janela SOBRE, na aba CONTATO, no menu superior esquerdo... Vai ter E-mail, telefone etc... Fecha a Aba "SOBRE"-->
+
+
+
+
+<div id="Home">
+	<div id="containerHome" class="container">
+		<div class="receitas"><img src="Imagens/hotDog.jpg" class="imgReceita"><div class="tituloReceitas">Título<br><br><br><br><br><br><br><br></div></div><!--Exemplos das caixas onde estarão as receitas-->
+		<div class="receitas"><img src="Imagens/hotDog.jpg" class="imgReceita"><div class="tituloReceitas">Título<br><br><br><br><br><br><br><br></div></div>
+		<div class="receitas"><img src="Imagens/hotDog.jpg" class="imgReceita"><div class="tituloReceitas">Título<br><br><br><br><br><br><br><br></div></div>
+		<div class="receitas"><img src="Imagens/hotDog.jpg" class="imgReceita"><div class="tituloReceitas">Título<br><br><br><br><br><br><br><br></div></div>
+		<div class="receitas"><img src="Imagens/hotDog.jpg" class="imgReceita"><div class="tituloReceitas">Título<br><br><br><br><br><br><br><br></div></div>
+		<div class="receitas"><img src="Imagens/hotDog.jpg" class="imgReceita"><div class="tituloReceitas">Título<br><br><br><br><br><br><br><br></div></div>
+		<div class="receitas"><img src="Imagens/hotDog.jpg" class="imgReceita"><div class="tituloReceitas">Título<br><br><br><br><br><br><br><br></div></div>
+		<div class="receitas"><img src="Imagens/hotDog.jpg" class="imgReceita"><div class="tituloReceitas">Título<br><br><br><br><br><br><br><br></div></div>
+		<div class="receitas"><img src="Imagens/hotDog.jpg" class="imgReceita"><div class="tituloReceitas">Título<br><br><br><br><br><br><br><br></div></div>
+		<div class="receitas"><img src="Imagens/hotDog.jpg" class="imgReceita"><div class="tituloReceitas">Título<br><br><br><br><br><br><br><br></div></div>
+		<div class="receitas"><img src="Imagens/hotDog.jpg" class="imgReceita"><div class="tituloReceitas">Título<br><br><br><br><br><br><br><br></div></div>
+		<div class="receitas"><img src="Imagens/hotDog.jpg" class="imgReceita"><div class="tituloReceitas">Título<br><br><br><br><br><br><br><br></div></div>
+	</div>
+</div>
+
+
+
+	
+</body>
+</html>

@@ -1,0 +1,332 @@
+/*Avisos
+
+#listSiteOpen a:hover --PRECISA MUDAR DE COR CASO HAJA MUDANÇA NA COR DE FUNDO--
+
+
+*/
+
+#menu{ /*CSS da Barra Superior*/
+	display: flex;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+}
+
+body{ /*É do body geral mesmo*/
+	margin: 0;
+	margin-top:  50px;
+	background-color: #f33; /*As cores ainda estão em fase experimental, mas é algo nesse estilo... Vermelho, talvez um amarelo e uma cor pra neutralizar isso tudo*/
+}
+
+.pesquisa{ /*CSS da caixa de Pesquisa*/
+	margin: auto;
+	width: inherit;
+	min-width: 30%;
+	/*border: none;* //*Não pareceu legal por borda*/
+}
+.imgPesq{ /*imagem do botão de pesquisa (Lupa)*/
+	height: 60%;
+	margin: auto;
+}
+
+
+
+.inputPesq{/*caixa de texto PESQUISA*/
+	width: 100%;
+	height: 60%;
+	background-color: #f88;
+	border: none;
+	min-width: 100px;
+	min-height: 22px;
+	margin: auto;
+	font-size: larger;
+
+}
+.inputPesq:focus{/*Caixa de texto Pesquisa, quando selecionado para escrever fica branco*/
+	background-color: white;
+
+}
+.btnPesq{ /*CSS do botão de pesquisa (LUPA)*/
+	cursor: pointer;
+	margin: auto;
+	width: 40px;
+	background: url(Imagens/Lupa.svg); 
+	background-repeat: no-repeat;
+  	background-size: auto;
+}
+.btnPesq:hover{ /*"animação" o botão (Lupa) afunda com mouse em cima*/
+	background: url(Imagens/LupaDown.svg); 
+	background-repeat: no-repeat;
+  	background-size: auto;
+}
+
+#dropdown{ /*Botões de menu esquerdo(Home) e direito (Perfil)*/
+	min-width: 50px;
+	display: inline-block;
+
+}
+.logo{ /*Logo - Qual é a Receita*/
+    height: 32px;
+    margin: auto;
+    margin-right: 10px;
+}
+.left{ /*configuração do menu superior Esquerdo*/
+	left: 0px;
+}
+.right{/*Configuração do menu superior direito*/
+	right: 0px;
+}
+#dropdown .left{
+	margin-left: 10px; 
+}
+
+.btnMenu{ /*CSS do menu superior Esquerdo*/
+	margin: auto;
+	margin-right: 6px;
+	min-width: 40px; 
+	height: 36px;
+	border: none;
+}
+.filtro { /*imagem do botão filtro*/
+	background: url(Imagens/Filtro.svg);
+	background-repeat: no-repeat;
+  	background-size: auto;
+}
+.btnMenu:hover.filtro{ /*botão filtro afunda com mouse*/
+	background: url(Imagens/FiltroDown.svg);
+	background-repeat: no-repeat;
+  	background-size: auto;
+}
+
+.corPadraoFundo{ /*Cor de fundo do Menu*/
+	background-color: #dd0000;
+}
+.btnMenu.imgMenu{ /*Essas são todas imagens que estão na barra superior*/
+	background: url(Imagens/Menu.svg);
+	background-repeat: no-repeat;
+  	background-size: auto;
+}
+.btnMenu.NovoPerfil{
+	background: url(Imagens/NovoPerfil.svg);
+	background-repeat: no-repeat;
+  	background-size: auto;
+}
+#dropdown:hover .NovoPerfil{
+	background: url(Imagens/NovoPerfilDown.svg);
+	background-repeat: no-repeat;
+  	background-size: auto;
+}
+#dropdown:hover .imgMenu{
+	background: url(Imagens/MenuDown.svg); 
+	background-repeat: no-repeat;
+  	background-size: auto;
+}
+.imgPerfil{ /*Configurações da Imagem de Perfil (bonequinho no lado superior direito)*/
+	height: 80%;
+	margin: auto 5px;
+}
+#listSiteOpen{ /*CSS da lista que abre no canto superior direito e esquerdo*/
+	position: absolute;
+	min-width: 160px;
+	opacity: 0;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);  
+ 	visibility: hidden;
+  	opacity: 0;
+  	transition: visibility 0.3s, opacity 0.3s linear;
+	
+}
+#dropdown:focus #listSiteOpen{ /*Verificar se funciona no celular*/
+
+}
+#dropdown:hover #listSiteOpen{ /*Menus superior direito e esquerdo tornam-se visíveis*/
+	visibility: visible;
+  	opacity: 1;
+
+}
+
+
+#listSiteOpen a, button{/*animação suave dos menus Superior Direito e Esquerdo*/
+	color: black;
+	padding: 8px 16px;
+	text-decoration: none;
+	display: flex;
+  	transition: background-color 0.3s linear;
+}
+
+#listSiteOpen a:hover{ /*Quando um dos botões dos menus superior Esq e Dir passarem o mouse, eles "escurecem", PRECISA MUDAR DE COR CASO HAJA MUDANÇA NA COR DE FUNDO*/
+	background-color: #ff5500;
+    cursor: pointer;
+}
+
+.container{ /*tudo que não é menu, um outro body*/
+	height: 100%;
+	width: 100%;
+	margin: auto;
+
+}
+.receitas{ /*CSS das receitas no Feed*/
+	background-color: #f2f2f2;
+	margin: 10px;
+	display: inline-grid;
+	padding: 9px;
+}
+.receitas:hover{
+	background-color: white;
+}
+.imgReceita{ /*CSS da imagem que está na receita*/
+	width: 150px;
+}
+.tituloReceitas{ /*CSS do título das receitas, ainda tem que configurar*/
+
+}
+
+.icoMenu{ /*CSS dos Ícones que estão no menu Esq e Dir*/
+	height: 30px;
+	margin: auto;
+	margin-left: 0;
+	margin-right: 15px;
+}
+
+.textMenu{ /*CSS dos Texto dos menus Esq e Dir*/
+	margin: auto;
+}
+
+
+/*Configurações para ajustar as receitas para cada tamanho de tela, Ainda não tenho configuração para telas maiores que 1549px de largura.*/
+@media only screen and (max-width:1549px) {
+	.container{
+		width: 1340px;
+	}
+}
+@media only screen and (max-width:1357px) {
+	.container{
+		width: 1148px;
+	}
+}
+@media only screen and (max-width:1165px) {
+	.container{
+		width: 956px;
+	}
+}
+@media only screen and (max-width:976px) {
+	.container{
+		width: 764px;
+	}
+}
+@media only screen and (max-width:781px) {
+	.container{
+		width: 572px;
+	}
+}
+@media only screen and (max-width:602px) {
+	.container{
+		width: 380px;
+	}
+}
+/*@media only screen and (max-width:398px) {
+	.container{
+		width: 177px; 
+	}
+}*/
+
+@media only screen and (max-width:450px) { /*Celulares e dispositivos pequenos*/
+	#home2Display{
+		display: block; 
+	}
+	#lateralDir{
+		width: 90%;
+	}
+	#conteudo{
+		width: 90%;
+	}
+	#menu{
+		display: grid;
+		position: initial;
+	}
+	.btnMenu{
+		margin-right: auto;
+	}
+	.logo{
+		margin-right: auto;
+	}
+	body{
+		margin-top: 0;
+	}
+}
+@media only screen and (max-width:398px) {/*Tamanho tela Minúsculo*/
+	.receitas{ /*Precisa centralizar as receitas com as bordas quando o navegador está abaixo de 398px de largura*/
+		margin: auto;
+		margin-bottom: 5px;
+		width: -webkit-fill-available;
+
+	}
+	.container{
+		width: 100%; /*pode dar erro. Configurar Design responsivo de .receita*/
+	}
+
+}
+
+
+
+
+
+
+
+.popup, .popuptext { /*POPUP SOBRE*/
+    visibility: hidden;
+    width: 45%;
+    background-color: #D00;
+    color: #fb0;
+    margin: auto;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: fixed;
+    left: 26%;
+    height: 25%;
+    min-height: 60px;
+
+}
+
+.show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+}
+
+
+@-webkit-keyframes fadeIn { /*animação do PopUp SOBRE*/
+    from {opacity: 0;} 
+    to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+}
+
+.fecharSobre{
+    margin: auto;
+    margin-right: 10px;
+    height: 20px;
+}
+
+.divFecharSobre{
+    display: flex;
+    width: 100%;
+}
+.copyrightText{ /*do SOBRE*/
+	margin: auto;
+}
+
+
+/*"Sobre" design responsivo*/
+@media only screen and (max-width:500px) {
+	.popuptext{
+		width: 96%;
+		left: 2%;
+	}
+}
+
