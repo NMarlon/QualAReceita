@@ -171,6 +171,10 @@ body{ /*É do body geral mesmo*/
 	margin: 10px;
 	display: inline-grid;
 	padding: 9px;
+	max-width: 342px;
+	max-height: 282px;	
+
+
 }
 .receitas:hover{
 	background-color: white;
@@ -178,12 +182,14 @@ body{ /*É do body geral mesmo*/
 .imgReceita{ /*CSS da imagem que está na receita*/
 	width: 150px;
 }
-.tituloReceitas{ /*CSS do título das receitas, ainda tem que configurar*/
 
+.tituloReceitas{ /*CSS do título das receitas, ainda tem que configurar*/
+ font-size: 100%;
 }
 
 .icoMenu{ /*CSS dos Ícones que estão no menu Esq e Dir*/
 	height: 30px;
+	width: 44px;
 	margin: auto;
 	margin-left: 0;
 	margin-right: 15px;
@@ -194,7 +200,8 @@ body{ /*É do body geral mesmo*/
 }
 
 
-/*Configurações para ajustar as receitas para cada tamanho de tela, Ainda não tenho configuração para telas maiores que 1549px de largura.*/
+/*Configurações para ajustar as receitas para cada tamanho de tela, Ainda não tenho configuração para telas maiores que 1549px de largura. 
+ Ainda precisa melhorar essa parte, as receitas do feed estão ficando com espaços vazios...*/
 @media only screen and (max-width:1549px) {
 	.container{
 		width: 1340px;
