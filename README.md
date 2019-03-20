@@ -62,6 +62,9 @@ Para a disposição das receitas no "body", pensei em modelos como:
 - Mosaico (Variação Horizontal e Vertical)
 - Google Imagens (Variação Horizontal)
 
+- Mundo Aberto (Pode "Scrollar" em qualquer direção 2D)(Bônus) Ex.: https://www.lego.com/en-us/kids/games
+
+
 
 
 ----------------------- 3. ESTRUTURA -----------------------------------------
@@ -259,5 +262,7 @@ Funções específicas:
 - Comentários
 - Botão Usar ingredientes nessa receita
 - Modo Economia de Ingredientes, 2 botões, um aciona outro configura (Dividir automaticamente os ingredientes para x número de dias para até x número de pessoas/porções. Ex. 2 Kg de trigo para 5 dias, até 2 pessoas, ex. 150g/pessoa por dia, isso dá 300g diarias para 2 pessoas, em 5 dias seria 1,5 Kg, simplesmente 300g/dia; Mas caso fosse para 3 pessoas, seria 150g * 3 pessoas * 5 dias = 2,25 Kg, isso passaria o limite, logo seria usado 2 Kg / 5 dias = 400g/dia) (Bônus)
+
+
 
 
