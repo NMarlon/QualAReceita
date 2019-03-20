@@ -56,13 +56,30 @@ Sobre o Logo, eu pensei em usar o próprio título (atual) ou usar imagens:
 As CORES eu preferiria algo tipo, McDonalds ou Burguer King (redes de comida), Vermelho e amarelo. Estou aberto à opções
 
 
-Para a disposição das receitas no "body", pensei em modelos como:
+2.2. Design do Feed - Para a disposição das receitas no "body", pensei em modelos como:
+----- 2.2.1. Quadrado------
 - Pinterest (Variação Vertical)
 - Simples Tabela/Grade (Sem variação... Atual)
 - Mosaico (Variação Horizontal e Vertical)
 - Google Imagens (Variação Horizontal)
 
 - Mundo Aberto (Pode "Scrollar" em qualquer direção 2D)(Bônus) Ex.: https://www.lego.com/en-us/kids/games
+
+-----2.2.2. -----Geométrico-----
+1. Formato:
+- Circular
+- Hexagonal
+- Triangular
+- Pentagonal
+
+2. Estrutura: 
+- Hexagonal
+  -Vertical 
+  -Horizontal
+- Circular (Centro do círculo às vezes aparece uma receita às vezes o logo, é aleatório)
+- Simples (Lado à lado)
+- Phi https://bit.ly/2YakIRe (algo semelhante)
+- Triangular (Especialmente para o Formato triangular)
 
 
 
