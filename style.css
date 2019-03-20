@@ -167,24 +167,61 @@ body{ /*É do body geral mesmo*/
 
 }
 .receitas{ /*CSS das receitas no Feed*/
+	box-shadow: 0px 0px 11px 0px black;
 	background-color: #f2f2f2;
 	margin: 10px;
 	display: inline-grid;
 	padding: 9px;
-	max-width: 342px;
-	max-height: 282px;	
-
+    width: 342px;
+    height: 342px;
+    border-radius: 50%;
 
 }
-.receitas:hover{
+.receitas:hover{ /*Realce quando põe o mouse sobre alguma receita*/
 	background-color: white;
 }
 .imgReceita{ /*CSS da imagem que está na receita*/
-	width: 150px;
+    width: 40%;
+    margin: auto;
+    box-shadow: 0 0 8px 1px grey;
+    border-radius: 50%;
 }
 
-.tituloReceitas{ /*CSS do título das receitas, ainda tem que configurar*/
- font-size: 100%;
+#tituloReceitas{ /*CSS do título das receitas, ainda tem que configurar*/
+    font-family: "Times New Roman", Times, serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #d00; 
+    text-align: center;    
+    margin-top: 8px;
+	margin-bottom: 0px;
+	font-size: larger;
+	height: 50px;
+}
+.barraDeInfo{ /*Barra horizontal tem os Likes e Views*/
+	display: inline-flex;
+	margin: 0 auto;
+	height: 34px;
+	width: 70%;
+}
+
+#NumLikes{/*CSS Do texto (LIKE: 52)*/
+	margin: auto;
+}
+.displayFeedReceitas{
+	display: block;
+}
+.likesEstrutura{
+	
+}
+#buttonLike{ /*Botão de Like das receitas do Feed*/
+	width: 34px;
+    height: 34px;
+    margin-left: 20px;
+    border: none;
+   	background: url(Imagens/HeartUnclicked.svg);
+	background-repeat: no-repeat;
+  	background-size: auto;
 }
 
 .icoMenu{ /*CSS dos Ícones que estão no menu Esq e Dir*/
