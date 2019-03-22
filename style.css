@@ -18,7 +18,6 @@ body{ /*É do body geral mesmo*/
 	background-color: #f33; /*As cores ainda estão em fase experimental, mas é algo nesse estilo... Vermelho, talvez um amarelo e uma cor pra neutralizar isso tudo*/
 }
 #Home{
-
     position: absolute;
     height: 100%;
     width: 100%;
@@ -179,8 +178,8 @@ body{ /*É do body geral mesmo*/
 	margin: 10px;
 	display: inline-grid;
 	padding: 9px;
-    width: 342px;
-    height: 342px;
+    width: 5px;
+    height: 5px;
     border-radius: 50%;        
 
     position: absolute;
