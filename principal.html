@@ -9,16 +9,22 @@
 	<script src="js.js"></script>
 	<title>Qual A Receita?</title><!--Até aqui código de sempre... Padrão-->
 </head>
-<body  onload="initReceitas();"> <!--posicaoReceitasjs();EnterTab();">-->
+<body  onload="initReceitas(); MoverFundo();"> <!--EnterTab(); MoverImagemBackground();">-->
 
 
 
 
 <div id="Home">
+	<img src="Imagens/QualAReceitaLogo.svg" style="
+    width: 1600px;
+    position: absolute;
+    left: -600px;
+    top: 400px;
+	">
 	<!--<div id="containerHome" class="container">--><!--Exemplos das caixas onde estarão as receitas-->
-		<p id="razao" style="font-size: -webkit-xxx-large"></p>
-	<div id="receitasFeed" class="receitas">
-		<!--<img src="Imagens/hotDog.jpg" class="imgReceita">
+		<!--<p id="razao" style="font-size: -webkit-xxx-large"></p>--><!--razao é para vizualizar os parâmetros do Phi no .js -->
+	<div id="receitasFeed1" class="receitas" onload="">
+		
 		<p id="tituloReceitas">TÍTULO QUE CONTINUA PARA VER UM TÍTULO GRANDE</p>
 		<div class="barraDeInfo">
 			<div>
@@ -29,7 +35,8 @@
 				<div id="NumLikes" class="displayFeedReceitas">52</div class="likesEstrutura">
 				<button id="buttonLike" class="displayFeedReceitas"></button>
 			</div>
-		</div>-->
+		</div>
+		<img src="Imagens/hotDog.jpg" class="imgReceita"><!--Imagem da Receita Sobre o título-->
 	</div>
 </div>
 
