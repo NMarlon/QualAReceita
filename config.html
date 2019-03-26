@@ -6,39 +6,15 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<link rel="stylesheet" type="text/css" href="anim.css"><!--Ainda não usado-->
 	<link rel="icon" href="Imagens/QR.ico" type="image/x-icon" /><!--icone do Título-->
-	<script src="jsPrincipal.js"></script>
+	<script src="js.js"></script>
 	<title>Qual A Receita?</title><!--Até aqui código de sempre... Padrão-->
 </head>
-<body  onload="initReceitas(); MoverFundo();"> <!--EnterTab(); MoverImagemBackground();">-->
+<body  onload=""> <!--EnterTab(); MoverImagemBackground();">-->
 
 
 
 
-<div id="HomePrincipal">
-	<img src="Imagens/QualAReceitaLogo.svg" style="
-    width: 1600px;
-    position: absolute;
-    left: -600px;
-    top: 400px;
-	">
-	<!--<div id="containerHome" class="container">--><!--Exemplos das caixas onde estarão as receitas-->
-		<!--<p id="razao" style="font-size: -webkit-xxx-large"></p>--><!--razao é para vizualizar os parâmetros do Phi no .js -->
-	<div id="receitasFeed1" class="receitas" onload="">
-		
-		<p id="tituloReceitas">TÍTULO QUE CONTINUA PARA VER UM TÍTULO GRANDE</p>
-		<div class="barraDeInfo">
-			<div>
-				<div class="">1254</div>
-			Views
-			</div>
-			<div>
-				<div id="NumLikes" class="displayFeedReceitas">52</div class="likesEstrutura">
-				<button id="buttonLike" class="displayFeedReceitas"></button>
-			</div>
-		</div>
-		<img src="Imagens/hotDog.jpg" class="imgReceita"><!--Imagem da Receita Sobre o título-->
-	</div>
-</div>
+<div id="Home">
 
 <div id="menu" class="corPadraoFundo">
 		<div id="dropdown" class="left" ><!--menu do lado esquerdo-->
@@ -51,9 +27,7 @@
 		</div>
 
 		<img src="Imagens/QualAReceitaLogo.svg" class="logo"><!--LOGO-->
-		<input type="text" id="inputPesq" class="inputPesq" placeholder="Procure por receitas aqui"/><!--Caixa de Texto, Procura de Itens,-->
-		<button class="btnMenu btnPesq corPadraoFundo"><!--botão de PESQUISA-->
-		</button>
+		
 		<button id="btnMenu" class="btnMenu filtro corPadraoFundo"></button><!--FILTRO, ainda precisa desenvolver... uma lista com uma série de opções, dentre elas botões para filtrar por, exemp. "arroz" e "feijão"; receitas que não tenham ex. "vinagre", "glúten","Sal"; cada item com a relação OPCIONAL ou OBRIGATÓRIO ex. Opcional ter "orégano", obrigatório ter "manteiga"; Do meu armário/geladeira (ainda definir o nome) (aparece a lista de ingredientes do armário) quero apenas Pré-Lista (uma lista exata de ingredientes feita pela pessoa) ou Ingredientes ex. "Trigo" e "leite"; Do meu armário não quero apenas Pré-Lista ou Ingredientes ex. "pão", "carne"; ORDENAR POR (Mais uma série de opções, dentre elas: Aleatório, Mais vizualizado global, mais curtido, ingredientes que eu mais uso, os que estão passando da validade[estimado pela data que o ingrediente foi colocado no armário, caso ainda não tenha sido colocado uma data de fabricação], ); -->
 		
 
@@ -66,7 +40,7 @@
 					<a href=""><img src="Imagens/procuraReceita.svg" class="icoMenu"><p class="textMenu">Procurar Receitas</p></a>
 					<a href=""><img src="Imagens/favorite.svg" class="icoMenu"><p class="textMenu">Favoritos</p></a>
 					<a href=""><img src="Imagens/lista (1).svg" class="icoMenu"><p class="textMenu">Lista</p></a>
-					<a href=""><img src="Imagens/perfil.svg" class="icoMenu"><p class="textMenu">Perfil</p></a>
+					<a href=""><img src="Imagens/perfil.svg" class="icoMenu"><p class="textMenu">Perfil</p></a>					
 					<a href="config.html"><img src="Imagens/config.svg" class="icoMenu"><p class="textMenu">Configurações</p></a>
 				</div>
 		</div>

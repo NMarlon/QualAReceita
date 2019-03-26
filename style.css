@@ -9,6 +9,7 @@
 	display: flex;
 	width: 100%;
 	position: fixed;
+	left: 0;
 	top: 0;
 }
 
@@ -22,7 +23,6 @@ body{ /*É do body geral mesmo*/
     height: 100%;
     width: 100%;
     margin: auto;
-    left: 50%;
 }
 
 .pesquisa{ /*CSS da caixa de Pesquisa*/
@@ -173,11 +173,14 @@ body{ /*É do body geral mesmo*/
 
 }
 .receitas{ /*CSS das receitas no Feed*/
-	box-shadow: 0px 0px 11px 0px black;
+	box-shadow: 0px 0px 11px 0px black;	
+	cursor:pointer;
+
 	/*background: url(Imagens/hotDog.jpg);	
     background-position: center center;    
 	background-repeat: repeat;
     background-size: cover;*/
+
 	background-color: #f2f2f2;
 	margin: 10px;
 	display: inline-grid;
@@ -186,34 +189,38 @@ body{ /*É do body geral mesmo*/
     height: 342px;
     border-radius: 50%;
     position: absolute;
-    left: 200px;
-    bottom: 300px;
-}
-.receitas::before{
-
+    transition: transform .333s ;    
+	/*transition: background-image 0.3s ease-in-out;*/
 }
 
-.receitas:hover .imgReceita{
-	opacity: 1;
-    width: 40%;
-    margin: auto;
-    box-shadow: 0 0 8px 1px grey;
-    border-radius: 50%;
-}
 .receitas:hover{ /*Realce quando põe o mouse sobre alguma receita*/
   	/*transition: background 0.8s ease-in-out;*/
   	/*background: url(Imagens/hotDog.jpg);
 	background-repeat: repeat;
     background-size: cover;
     background-position: center center;*/
+
+	transform: scale(1.1);
 }
+
+.receitas:hover .imgReceita{
+	opacity: 0.5;
+    margin: auto;
+    /*box-shadow: 0 0 8px 1px grey;
+    border-radius: 50%;*/
+}
+
 .imgReceita{ /*CSS da imagem que está na receita*/
-    opacity: 0;
-    width: 40%;
+    opacity: 0.1;    
+    position: absolute;
+    width: 100%;
+    height: 100%;
     margin: auto;
     box-shadow: 0 0 8px 1px grey;
     border-radius: 50%;
-    transition: opacity 0.8s ease-in-out;
+    -webkit-transition: opacity 0.5s;
+    transition: opacity 0.5s ease-in-out;
+
 }
 .imgReceita:hover{
 	/*opacity: 1;*/
