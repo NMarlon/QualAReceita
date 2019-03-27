@@ -72,6 +72,10 @@ As CORES eu preferiria algo tipo, McDonalds ou Burguer King (redes de comida), V
 - Triangular
 - Pentagonal
 
+1.1. Rotação do Formato:
+ - padrão
+ - aleatório
+
 2. Estrutura: 
 - Hexagonal
   -Vertical 
@@ -81,6 +85,7 @@ As CORES eu preferiria algo tipo, McDonalds ou Burguer King (redes de comida), V
 - Phi https://bit.ly/2YakIRe (algo semelhante)
 - Triangular (Especialmente para o Formato triangular)
 
+(Bônus) !Isso Também poderá de certa forma ser aplicado às outras páginas Além da RECEITA!
 
 
 
