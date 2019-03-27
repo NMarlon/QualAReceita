@@ -26,6 +26,7 @@ Em pauta tudo que vejo que pode dar certo e errado, pontos positivos e negativos
  - Ter tabela de valores como calorias, gorduras, sódio etc, diariamente.
  - Função de auto-completar busca. Ex. Nes|(Cau)
  - Aceitar pelo menos uma imagem por receita
+ - Login e Registro pelo Google e Facebook.
  - Registro de uso de Receitas do User (Possível User deletar receita específica ou todo histórico)
  - Receitas idênticas tem de ser mescladas/não-postada. (Mesmos ingredientes e quantidade de ingredientes que outra receita)
  - Receitas semelhantes tem que ser categorizadas. (Mesmos ingredientes, quantidades diferentes de outras receitas. O intuito é variar o cardápio, fazer com que apareça receitas novas no feed, isso para evitar que apareça 200 receitas de panqueca seguidas só porque tem trigo. Panqueca aparece uma vez, só se repete se tiver o título da receita envolvido e não apenas os ingredientes.)
