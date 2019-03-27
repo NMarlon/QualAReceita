@@ -205,7 +205,12 @@ ON|OFF - Adicionar ao armário automáticamente ao pesquisar pelo produto - (Ao 
 
 ON|OFF - Aceitar receber receitas semelhantes no feed - Ao habilitar pode-se aparecer umas 200 panquecas, só por digitar trigo.
 
-
+- BUTTON SALVAR CONFIGURAÇÕES - Uma lista de configurações salvas, então vai ter: (Bônus)
+   - Salvar Config
+   - Carregar Config
+   - Deletar Config
+   - Selecionar Config
+   - Lista Com as Configurações
 
 
 
