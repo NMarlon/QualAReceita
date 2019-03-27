@@ -49,10 +49,13 @@
 
 	<div class="fundo">
 		<div class="caixaSeparacao"><h1>Receitas</h1><h3>Display</h3><!--Mais Tarde Colocar COLUNAS igual no Word, para não ficar com tanto espaço livre em branco no lado direito-->
-			<div class="radioDivisao">
-				<input type="radio" id="planoPolar" class="radioclass" name="planoName" value="1"
-	         checked><h4 class="radioclass">Plano Polar</h4>
-         	</div>
+			<div id="PlanoId" class="radioDivisao">
+					<input type="radio" id="planoPolar" class="radioclass" name="planoName" checked="true">
+					<h4 class="radioclass">Plano Polar</h4>
+			</div>					
+					<br><br>
+				
+	       	
 			<p class="explanacao">Mudar posição das receitas: </p> 
 			<select id="QualPadrao" name="QualPadraoName">
                <option value="1">Girassol</option><!--Phi-->
@@ -62,14 +65,14 @@
            	</select>
            	<div class="MiniMapa">
            		<canvas id="myCanvas" width="200" height="200" style="border:1px solid #000000;">Seu navegador não suporta o Mini-Mapa</canvas>
-           		<!--Barra de Loading MiniMapa... Quando o minimapa estiver carregando ele vai mostrar quanto está carregado-->
+           		
 	           	<div
 	           	  id="loading"
 				  class="ldBar label-center"
 				  style="width:3%;height:3%;position: relative;right: 0;bottom: 0;" 
 				  data-value="0"
 				  data-preset="circle"
-				></div><!--Display: none; e quando for ativar atualizarMiniMapa() ele vai fazer display: initial;-->
+				></div><!--Barra de Loading MiniMapa... Quando o minimapa estiver carregando ele vai mostrar quanto está carregado--><!--Display: none; e quando for ativar atualizarMiniMapa() ele vai fazer display: initial;-->
 
 				<!--https://loading.io/progress/-->
            	</div>
@@ -81,11 +84,14 @@
            	<!--<button type="button" name="atualizarMiniMapaInput"  onclick="atualizarMiniMapa()">Atualizar</button><br>-->
            	<p>Inicia em: </p>
            	<input type="number" id="initNumBolinhasId" name="initNumBolinhasName" step="1" value="1">
-           	<br><br><!--Melhorar Design-->
-           	<div class="radioDivisao"><!--Deixar Radio ao lado do h4 .radioclass-->
-		       	<input type="radio" id="planoCartesiano" name="planoName" value="2">
-		       	<h4 class="radioclass">Plano Cartesiano</h4>
-           	</div>
+           	<br><br><!--Melhorar Design-->           
+         	<div class="radioDivisao"><!--Deixar Radio ao lado do h4 .radioclass-->
+			       	<input type="radio" id="planoCartesiano" name="planoName" class="radioclass" >
+			       	<h4 class="radioclass">Plano Cartesiano</h4>
+	        </div>
+	        <input type="number" id="distanciaX" value="2">
+	        <input type="number" id="distanciaY" value="2">
+	        
            	<input type="reset" name="atualizarMiniMapaInput"  onclick="resetMapa()">
 		</div>
 	</div>
