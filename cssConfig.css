@@ -6,6 +6,7 @@
 
 .fundo{ /*background das configurações*/
 	background-color: white;
+	padding: 19px;
 	margin-left: 10%;
 	margin-right: 10%;
 	width: 80%;
@@ -17,6 +18,10 @@
 }
 .radioDivisao{/*Estrutura para o "radio" ficar ao lado do texto: "Plano Cartesiano/Polar"*/
 
+}
+
+.MiniMapa{
+	display: flex;
 }
 .radioclass{
 	margin: auto;

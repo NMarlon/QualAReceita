@@ -5,9 +5,11 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="cssGeral.css">
 	<link rel="stylesheet" type="text/css" href="cssConfig.css"><!--Ainda não usado-->
-	<link rel="icon" href="Imagens/QR.ico" type="image/x-icon" /><!--icone do Título-->
-	<script src="jsConfig.js"></script>
+	<link rel="icon" href="Imagens/QR.ico" type="image/x-icon" /><!--icone do Título-->	
+	<link rel="stylesheet" type="text/css" href="loading-bar.css"/>
+	<script type="text/javascript" src="loading-bar.js"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" type="text/javascript"></script>
+	<script src="jsConfig.js"></script>	
 	<!--<script type="text/javascript"  src="jqueryBiblioteca.js"></script>-->
 	<title>Qual A Receita?</title><!--Até aqui código de sempre... Padrão-->
 </head>
@@ -53,19 +55,34 @@
          	</div>
 			<p class="explanacao">Mudar posição das receitas: </p> 
 			<select id="QualPadrao" name="QualPadraoName">
-               <option value="1">Phi</option>
+               <option value="1">Girassol</option><!--Phi-->
                <option value="2">Outro</option>
-	               <input type="number" id="razaoNumId" name="razaoNum" min="0" max="10" step="0.1" value=""> 
-	               <input type="range" name="razaoRang"  min="0" max="10" step="0.01">		
+	               <input type="number" id="razaoNumId" name="razaoNum" min="0" max="10" step="0.0002" value=""> 
+	               <input type="range" id="razaoRangId" name="razaoRang"  min="0" max="4" step="0.001" value="">		
            	</select>
+           	<div class="MiniMapa">
+           		<canvas id="myCanvas" width="200" height="200" style="border:1px solid #000000;">Seu navegador não suporta o Mini-Mapa</canvas>
+           		<!--Barra de Loading MiniMapa... Quando o minimapa estiver carregando ele vai mostrar quanto está carregado-->
+	           	<div
+	           	  id="loading"
+				  class="ldBar label-center"
+				  style="width:3%;height:3%;position: relative;right: 0;bottom: 0;" 
+				  data-value="0"
+				  data-preset="circle"
+				></div><!--Display: none; e quando for ativar atualizarMiniMapa() ele vai fazer display: initial;-->
 
-           <canvas id="myCanvas" width="200" height="200" style="border:1px solid #000000;">Seu navegador não suporta o Mini-Mapa</canvas>
+				<!--https://loading.io/progress/-->
+           	</div>
+           
           	<p >Distância entre as receitas</p>
-			<input type="number" name="raio" min="0" max="10" step="0.01" value="50000">	
+			<input type="number" id="DistBolinhas" name="raio" min="0" step="1000" value="50000">	
 			<p> Número de bolinhas no mini mapa</p>
 			<input type="number" name="numDeBolinhas" id="numDeBolinhasId" step="1" value="250">	
-           	<button type="button" name="atualizarMiniMapaInput"  onclick="atualizarMiniMapa()">Atualizar</button><br><!--Melhorar Design-->
-           	<div class="radioDivisao">
+           	<!--<button type="button" name="atualizarMiniMapaInput"  onclick="atualizarMiniMapa()">Atualizar</button><br>-->
+           	<p>Inicia em: </p>
+           	<input type="number" id="initNumBolinhasId" name="initNumBolinhasName" step="1" value="1">
+           	<br><br><!--Melhorar Design-->
+           	<div class="radioDivisao"><!--Deixar Radio ao lado do h4 .radioclass-->
 		       	<input type="radio" id="planoCartesiano" name="planoName" value="2">
 		       	<h4 class="radioclass">Plano Cartesiano</h4>
            	</div>
@@ -73,6 +90,7 @@
 		</div>
 	</div>
 	<span class="popuptext" id="sobre" onclick="sobreFunction()"><div class="divFecharSobre"><img src="Imagens/fechar.svg" class="fecharSobre"></div><span class="copyrightText">Copyright</span></span><!--Janela SOBRE, na aba CONTATO, no menu superior esquerdo... Vai ter E-mail, telefone etc... Fecha a Aba "SOBRE"-->
+
 
 
 
