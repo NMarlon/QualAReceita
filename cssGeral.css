@@ -19,9 +19,9 @@ body{ /*É do body geral mesmo*/
 	background-color: #f33; /*As cores ainda estão em fase experimental, mas é algo nesse estilo... Vermelho, talvez um amarelo e uma cor pra neutralizar isso tudo*/
 }
 #Home{
+}
+.Home{ /*Classe genérica para o  Home das outras páginas*/
     position: absolute;
-    height: 100%;
-    width: 100%;
     margin: auto;
 }
 
@@ -172,76 +172,7 @@ body{ /*É do body geral mesmo*/
 	position: 50%;
 
 }
-.receitas{ /*CSS das receitas no Feed*/
-	box-shadow: 0px 0px 11px 0px black;	
-	cursor:pointer;
 
-	/*background: url(Imagens/hotDog.jpg);	
-    background-position: center center;    
-	background-repeat: repeat;
-    background-size: cover;*/
-
-	background-color: #f2f2f2;
-	margin: 10px;
-	display: inline-grid;
-	padding: 9px;
-    width: 342px;
-    height: 342px;
-    border-radius: 50%;
-    position: absolute;
-    transition: transform .333s ;    
-	/*transition: background-image 0.3s ease-in-out;*/
-}
-
-.receitas:hover{ /*Realce quando põe o mouse sobre alguma receita*/
-  	/*transition: background 0.8s ease-in-out;*/
-  	/*background: url(Imagens/hotDog.jpg);
-	background-repeat: repeat;
-    background-size: cover;
-    background-position: center center;*/
-
-	transform: scale(1.1);
-}
-
-.receitas:hover .imgReceita{
-	opacity: 0.5;
-    margin: auto;
-    /*box-shadow: 0 0 8px 1px grey;
-    border-radius: 50%;*/
-}
-
-.imgReceita{ /*CSS da imagem que está na receita*/
-    opacity: 0.1;    
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    margin: auto;
-    box-shadow: 0 0 8px 1px grey;
-    border-radius: 50%;
-    -webkit-transition: opacity 0.5s;
-    transition: opacity 0.5s ease-in-out;
-
-}
-.imgReceita:hover{
-	/*opacity: 1;*/
-  	/*transition: opacity 0.8s ease-in-out;*/
-
-}
-
-#tituloReceitas{ /*CSS do título das receitas, ainda tem que configurar*/
-    font-family: "Times New Roman", Times, serif;
-    font-weight: bold;
-    text-transform: uppercase;
-    color: #d00; 
-    text-align: center;    
-    width: 210px;
-    margin-right: auto;
-    margin-left: auto;
-    margin-top: 8px;
-	margin-bottom: 0px;
-	font-size: larger;
-	height: 50px;
-}
 .barraDeInfo{ /*Barra horizontal tem os Likes e Views*/
 	display: inline-flex;
 	margin: 0 auto;

@@ -3,7 +3,8 @@
 <head>
 	<meta charset="UTF-8"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="cssPrincipal.css">
+	<link rel="stylesheet" type="text/css" href="cssGeral.css">
 	<link rel="stylesheet" type="text/css" href="anim.css"><!--Ainda não usado-->
 	<link rel="icon" href="Imagens/QR.ico" type="image/x-icon" /><!--icone do Título-->
 	<script src="jsPrincipal.js"></script>
@@ -14,7 +15,7 @@
 
 
 
-<div id="HomePrincipal">
+<div id="HomePrincipal" class="Home">
 	<img src="Imagens/QualAReceitaLogo.svg" style="
     width: 1600px;
     position: absolute;
@@ -51,7 +52,7 @@
 		</div>
 
 		<img src="Imagens/QualAReceitaLogo.svg" class="logo"><!--LOGO-->
-		<input type="text" id="inputPesq" class="inputPesq" placeholder="Procure por receitas aqui"/><!--Caixa de Texto, Procura de Itens,-->
+		<input type="search" id="inputPesq" class="inputPesq" placeholder="Procure por receitas aqui"/><!--Caixa de Texto, Procura de Itens,-->
 		<button class="btnMenu btnPesq corPadraoFundo"><!--botão de PESQUISA-->
 		</button>
 		<button id="btnMenu" class="btnMenu filtro corPadraoFundo"></button><!--FILTRO, ainda precisa desenvolver... uma lista com uma série de opções, dentre elas botões para filtrar por, exemp. "arroz" e "feijão"; receitas que não tenham ex. "vinagre", "glúten","Sal"; cada item com a relação OPCIONAL ou OBRIGATÓRIO ex. Opcional ter "orégano", obrigatório ter "manteiga"; Do meu armário/geladeira (ainda definir o nome) (aparece a lista de ingredientes do armário) quero apenas Pré-Lista (uma lista exata de ingredientes feita pela pessoa) ou Ingredientes ex. "Trigo" e "leite"; Do meu armário não quero apenas Pré-Lista ou Ingredientes ex. "pão", "carne"; ORDENAR POR (Mais uma série de opções, dentre elas: Aleatório, Mais vizualizado global, mais curtido, ingredientes que eu mais uso, os que estão passando da validade[estimado pela data que o ingrediente foi colocado no armário, caso ainda não tenha sido colocado uma data de fabricação], ); -->

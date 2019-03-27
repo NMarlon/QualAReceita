@@ -1,0 +1,23 @@
+.Home{ /*Div Principal Antes do Fundo*/
+	top: 15px;	
+    min-height: 100%;
+    width: 100%;
+}
+
+.fundo{ /*background das configurações*/
+	background-color: white;
+	margin-left: 10%;
+	margin-right: 10%;
+	width: 80%;
+	height: 100%;
+}
+
+.caixaSeparacao{
+
+}
+.radioDivisao{/*Estrutura para o "radio" ficar ao lado do texto: "Plano Cartesiano/Polar"*/
+
+}
+.radioclass{
+	margin: auto;
+}

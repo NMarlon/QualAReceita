@@ -3,49 +3,75 @@
 <head>
 	<meta charset="UTF-8"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="style.css">
-	<link rel="stylesheet" type="text/css" href="anim.css"><!--Ainda não usado-->
+	<link rel="stylesheet" type="text/css" href="cssGeral.css">
+	<link rel="stylesheet" type="text/css" href="cssConfig.css"><!--Ainda não usado-->
 	<link rel="icon" href="Imagens/QR.ico" type="image/x-icon" /><!--icone do Título-->
-	<script src="js.js"></script>
+	<script src="jsConfig.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" type="text/javascript"></script>
+	<!--<script type="text/javascript"  src="jqueryBiblioteca.js"></script>-->
 	<title>Qual A Receita?</title><!--Até aqui código de sempre... Padrão-->
 </head>
-<body  onload=""> <!--EnterTab(); MoverImagemBackground();">-->
+<body  onload="iniciar();"> 
 
+	<div class="Home HomeConfig">
 
+		<div id="menu" class="corPadraoFundo">
+			<div id="dropdown" class="left" ><!--menu do lado esquerdo-->
+				<button class="btnMenu imgMenu corPadraoFundo"><!--<img src="Imagens/Menu.svg" alt="Menu" class="imgPerfil"> --diferença entre img e button... o que for melhor----></button>
+					<div id="listSiteOpen" class="corPadraoFundo">
+						<a href="principal.html"><img src="Imagens/home.svg" class="icoMenu"><p class="textMenu">Home</p></a><!--Gosto de SVG, é escalável, não perde a qualidade... os icones podem ter formas simples-->
+						<a href="novaReceita.html"><img src="Imagens/newFile.svg" class="icoMenu"><p class="textMenu">Nova Receita</p></a>
+						<div onclick="sobreFunction()"><a><img src="Imagens/contato.svg" class="icoMenu"><p class="textMenu">Contato</p></a></div>
+					</div>
+			</div>
 
+			<img src="Imagens/QualAReceitaLogo.svg" class="logo"><!--LOGO-->
+			
+			
+			
 
-<div id="Home">
+			<div id="dropdown" class="right">
+				<button class="btnMenu NovoPerfil corPadraoFundo">
+					<!--<img src="Imagens/NovoPerfil.svg" alt="Perfil" class="imgPerfil">-->
+				</button>
+					<div id="listSiteOpen" class="right corPadraoFundo">
+						<a href=""><img src="Imagens/geladeira (3).svg" class="icoMenu"><p class="textMenu">Armário</p></a>
+						<a href=""><img src="Imagens/procuraReceita.svg" class="icoMenu"><p class="textMenu">Procurar Receitas</p></a>
+						<a href=""><img src="Imagens/favorite.svg" class="icoMenu"><p class="textMenu">Favoritos</p></a>
+						<a href=""><img src="Imagens/lista (1).svg" class="icoMenu"><p class="textMenu">Lista</p></a>
+						<a href=""><img src="Imagens/perfil.svg" class="icoMenu"><p class="textMenu">Perfil</p></a>					
+						<a href="config.html"><img src="Imagens/config.svg" class="icoMenu"><p class="textMenu">Configurações</p></a>
+					</div>
+			</div>
+	</div>
 
-<div id="menu" class="corPadraoFundo">
-		<div id="dropdown" class="left" ><!--menu do lado esquerdo-->
-			<button class="btnMenu imgMenu corPadraoFundo"><!--<img src="Imagens/Menu.svg" alt="Menu" class="imgPerfil"> --diferença entre img e button... o que for melhor----></button>
-				<div id="listSiteOpen" class="corPadraoFundo">
-					<a href="principal.html"><img src="Imagens/home.svg" class="icoMenu"><p class="textMenu">Home</p></a><!--Gosto de SVG, é escalável, não perde a qualidade... os icones podem ter formas simples-->
-					<a href="novaReceita.html"><img src="Imagens/newFile.svg" class="icoMenu"><p class="textMenu">Nova Receita</p></a>
-					<div onclick="sobreFunction()"><a><img src="Imagens/contato.svg" class="icoMenu"><p class="textMenu">Contato</p></a></div>
-				</div>
+	<div class="fundo">
+		<div class="caixaSeparacao"><h1>Receitas</h1><h3>Display</h3><!--Mais Tarde Colocar COLUNAS igual no Word, para não ficar com tanto espaço livre em branco no lado direito-->
+			<div class="radioDivisao">
+				<input type="radio" id="planoPolar" class="radioclass" name="planoName" value="1"
+	         checked><h4 class="radioclass">Plano Polar</h4>
+         	</div>
+			<p class="explanacao">Mudar posição das receitas: </p> 
+			<select id="QualPadrao" name="QualPadraoName">
+               <option value="1">Phi</option>
+               <option value="2">Outro</option>
+	               <input type="number" id="razaoNumId" name="razaoNum" min="0" max="10" step="0.1" value=""> 
+	               <input type="range" name="razaoRang"  min="0" max="10" step="0.01">		
+           	</select>
+
+           <canvas id="myCanvas" width="200" height="200" style="border:1px solid #000000;">Seu navegador não suporta o Mini-Mapa</canvas>
+          	<p >Distância entre as receitas</p>
+			<input type="number" name="raio" min="0" max="10" step="0.01" value="50000">	
+			<p> Número de bolinhas no mini mapa</p>
+			<input type="number" name="numDeBolinhas" id="numDeBolinhasId" step="1" value="250">	
+           	<button type="button" name="atualizarMiniMapaInput"  onclick="atualizarMiniMapa()">Atualizar</button><br><!--Melhorar Design-->
+           	<div class="radioDivisao">
+		       	<input type="radio" id="planoCartesiano" name="planoName" value="2">
+		       	<h4 class="radioclass">Plano Cartesiano</h4>
+           	</div>
+           	<input type="reset" name="atualizarMiniMapaInput"  onclick="resetMapa()">
 		</div>
-
-		<img src="Imagens/QualAReceitaLogo.svg" class="logo"><!--LOGO-->
-		
-		<button id="btnMenu" class="btnMenu filtro corPadraoFundo"></button><!--FILTRO, ainda precisa desenvolver... uma lista com uma série de opções, dentre elas botões para filtrar por, exemp. "arroz" e "feijão"; receitas que não tenham ex. "vinagre", "glúten","Sal"; cada item com a relação OPCIONAL ou OBRIGATÓRIO ex. Opcional ter "orégano", obrigatório ter "manteiga"; Do meu armário/geladeira (ainda definir o nome) (aparece a lista de ingredientes do armário) quero apenas Pré-Lista (uma lista exata de ingredientes feita pela pessoa) ou Ingredientes ex. "Trigo" e "leite"; Do meu armário não quero apenas Pré-Lista ou Ingredientes ex. "pão", "carne"; ORDENAR POR (Mais uma série de opções, dentre elas: Aleatório, Mais vizualizado global, mais curtido, ingredientes que eu mais uso, os que estão passando da validade[estimado pela data que o ingrediente foi colocado no armário, caso ainda não tenha sido colocado uma data de fabricação], ); -->
-		
-
-		<div id="dropdown" class="right">
-			<button class="btnMenu NovoPerfil corPadraoFundo">
-				<!--<img src="Imagens/NovoPerfil.svg" alt="Perfil" class="imgPerfil">-->
-			</button>
-				<div id="listSiteOpen" class="right corPadraoFundo">
-					<a href=""><img src="Imagens/geladeira (3).svg" class="icoMenu"><p class="textMenu">Armário</p></a>
-					<a href=""><img src="Imagens/procuraReceita.svg" class="icoMenu"><p class="textMenu">Procurar Receitas</p></a>
-					<a href=""><img src="Imagens/favorite.svg" class="icoMenu"><p class="textMenu">Favoritos</p></a>
-					<a href=""><img src="Imagens/lista (1).svg" class="icoMenu"><p class="textMenu">Lista</p></a>
-					<a href=""><img src="Imagens/perfil.svg" class="icoMenu"><p class="textMenu">Perfil</p></a>					
-					<a href="config.html"><img src="Imagens/config.svg" class="icoMenu"><p class="textMenu">Configurações</p></a>
-				</div>
-		</div>
-</div>
-
+	</div>
 	<span class="popuptext" id="sobre" onclick="sobreFunction()"><div class="divFecharSobre"><img src="Imagens/fechar.svg" class="fecharSobre"></div><span class="copyrightText">Copyright</span></span><!--Janela SOBRE, na aba CONTATO, no menu superior esquerdo... Vai ter E-mail, telefone etc... Fecha a Aba "SOBRE"-->
 
 
