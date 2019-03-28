@@ -20,6 +20,9 @@ function iniciar(){
 		default:
 		alert('ERRO AO INICIAR, #QualPadrao, jsConfig.js linha: 9... Phi, outros ou o que?');
 	}
+
+	//document.getElementById('myCanvas').height = 200; //!!!!!!!!Largura e Altura do Canvas (QUANDO O BANCO DE DADOS ESTIVER PRONTO, 200 SE TORNA O QUE FOI SALVO PELO USER DA ULTIMA VEZ)!!!!!!!!!!!	
+	//document.getElementById('myCanvas').width = 200;
 	atualizarMiniMapa();
 }
 
@@ -31,7 +34,8 @@ function atualizarMiniMapa(){ //Iniciar com algumas receitas (Por enquanto apena
 	//window.onload = document.getElementById('myCanvas').appendChild(spinner.el);
 
 	//setTimeout( atualizarMiniMapa2(), 0);
-	
+	//document.getElementById('myCanvas').height = document.getElementById('xCanvas');	
+	//document.getElementById('myCanvas').width = document.getElementById('yCanvas');
 
     var c = document.getElementById("myCanvas");//Canvas
     var ctx = c.getContext("2d");
@@ -70,33 +74,96 @@ function atualizarMiniMapa(){ //Iniciar com algumas receitas (Por enquanto apena
 			bar2.set((i-iInit) / (numDeBolinhas-iInit));//Função da Porcentagem
 		}
 	}else{//Se for plano cartesiano
-		x=0;
-		y=0;
-		for (let i = iInit; i <= numDeBolinhas;i++) {
-			switch(i%4){
-				case 1:
-					x = i * document.getElementById('distanciaX').value;
-					distanciaCartesiana(ctx,x,y);
-				break;
-				case 2:
-					y = i * document.getElementById('distanciaY').value;
-					distanciaCartesiana(ctx,x,y);
-				break;
-				case 3:				
-					y = -i * document.getElementById('distanciaY').value;
-					distanciaCartesiana(ctx,x,y);
-				break;
-				default:
-					x = -i * document.getElementById('distanciaX').value;
-					distanciaCartesiana(ctx,x,y);
-			}
-		}
-	}
+		//xy,00,10,11,01,-11,-10,-1-1,0-1,1-1//20,21,22,12,02,-12,-22,-21,-20,-2-1,-2-2,-1-2,0-2,1-2,2-2,2-1//
+		//x=0;
+		//y=0;
+		let contagem = 1;
+		let dist =  (45/50000)*document.getElementById('DistBolinhas').value;
+
+		let xAnt = 0;
+		let yAnt = 0;
+	//	while (i <= numDeBolinhas) {
+	//	distanciaCartesiana(ctx,x,y);
+
+
+		var passos = 1;
+		// coordenadas do centro da espiral
+		var x = 10;
+		var y = 10;
+		let xCanvas = document.getElementById('xCanvas').value/2;
+		let yCanvas = document.getElementById('yCanvas').value/2;
+		let init = 1;
+		let k = 1;
+	    distanciaCartesiana(ctx, xCanvas, yCanvas);
+        for (let i=1; i<numDeBolinhas; ++i){ //numDeBolinhas%8
+
+        	for (var j = init; j < contagem  && k <numDeBolinhas; j++) {
+        		distanciaCartesiana(ctx, xCanvas+dist*j, yCanvas+dist*k);      		       		
+      		}
+      		i+=j;
+        	for (var j = init; j < contagem  && k <numDeBolinhas; j++) {
+        		distanciaCartesiana(ctx, xCanvas+dist*k, yCanvas+dist*j);
+        	}
+      		i+=j;
+
+        	for (var j = init; j < contagem  && k <numDeBolinhas; j++) {
+        		distanciaCartesiana(ctx, xCanvas-dist*j, yCanvas-dist*k);        		
+        	}
+      		i+=j;
+	       	for (var j = init; j < contagem && k <numDeBolinhas; j++) {
+	       		distanciaCartesiana(ctx, xCanvas-dist*k, yCanvas-dist*j);
+	       	}
+      		i+=j;
+	       	for (var j = init; j < contagem && k <numDeBolinhas; j++) {
+	       		distanciaCartesiana(ctx, xCanvas+dist*j, yCanvas-dist*k);
+	       	}
+      		i+=j;
+	       	for (var j = init; j < contagem && k <numDeBolinhas; j++) {
+	       		distanciaCartesiana(ctx, xCanvas+dist*k, yCanvas-dist*j);
+	       	}	
+      		i+=j;       	
+	       	for (var j = init; j < contagem && k <numDeBolinhas; j++) {
+	       		distanciaCartesiana(ctx, xCanvas-dist*j, yCanvas+dist*k);
+	       	}
+      		i+=j;
+	       	for (var j = init; j < contagem && k <numDeBolinhas; j++) {
+	       		distanciaCartesiana(ctx, xCanvas-dist*k, yCanvas+dist*j);
+	       	}
+      		i+=j;
+	       	distanciaCartesiana(ctx, xCanvas+dist*k, yCanvas+dist*k);
+	       	distanciaCartesiana(ctx, xCanvas-dist*k, yCanvas+dist*k);
+	       	distanciaCartesiana(ctx, xCanvas+dist*k, yCanvas-dist*k);
+	       	distanciaCartesiana(ctx, xCanvas-dist*k, yCanvas-dist*k);
+     	  	distanciaCartesiana(ctx, xCanvas, yCanvas+dist*k);
+     	  	distanciaCartesiana(ctx,xCanvas+dist*k, yCanvas);        	
+     	  	distanciaCartesiana(ctx,xCanvas, yCanvas-dist*k);
+       		distanciaCartesiana(ctx,xCanvas-dist*k, yCanvas);
+       		i+=8;
+       		k++;
+       		
+        	contagem+=1;
+            //g.drawLine(xCanvas/2+10*i,     yCanvas/2-10*i,         xCanvas/2+10*i,     yCanvas/2+10*(i+1));
+            //g.drawLine(xCanvas/2+10*i,     yCanvas/2+10*(i+1), xCanvas/2-10*(i+1), yCanvas/2+10*(i+1));
+            //g.drawLine(xCanvas/2-10*(i+1), yCanvas/2+10*(i+1), xCanvas/2-10*(i+1), yCanvas/2-10*(i+1));
+            //g.drawLine(xCanvas/2-10*(i+1), yCanvas/2-10*(i+1), xCanvas/2+10*(i+1), yCanvas/2-10*(i+1));
+            
+           
+        }
+			
+
+
+
+
+	//		x+=dist;
+	//		i++; //00,10,11
+		//}		 //00,00,
+	}			 //_1
+
 }
 
 function distanciaCartesiana(ctx,x,y){
 	ctx.beginPath();
-	ctx.arc(x+100,y+100,4.8,0,2*Math.PI);//+100 é para centralizar com o canvas
+	ctx.arc(x,y,4.8,0,2*Math.PI);//+100 é para centralizar com o canvas
 	ctx.stroke();
 }
 
@@ -139,7 +206,12 @@ $(document).ready(function(){ //Ao mudar algum INPUT vai mudar todo o miniMapa, 
 	//Plano CARTESIANO
 
 	$('input[name=planoName]').change( function() {
-   		atualizarMiniMapa();
+		if (document.getElementById('planoPolar').checked==true) { //PlanoPolar "true", Valor padrão para PlanoPolar
+			resetMapa(true);
+		}else{			
+			document.getElementById('DistBolinhas').value = 12000;
+	   		resetMapa(false);
+		}
 	});
 	$('#distanciaX').change(function(){
 		atualizarMiniMapa();
@@ -147,21 +219,30 @@ $(document).ready(function(){ //Ao mudar algum INPUT vai mudar todo o miniMapa, 
 	$('#distanciaY').change(function(){
 		atualizarMiniMapa();
 	})
+	$('#xCanvas').change(function(){
+		document.getElementById('myCanvas').width = document.getElementById("xCanvas").value;
+		atualizarMiniMapa();
+	});
+	$('#yCanvas').change(function(){
+		document.getElementById('myCanvas').height = document.getElementById("yCanvas").value;
+		atualizarMiniMapa();
+	});
 	
 });
 
 
 
-function resetMapa(){ // RESET DAS CONFIGURAÇÕES DA ESTRUTURA DAS RECEITAS
+function resetMapa(MudaPlano){ // RESET DAS CONFIGURAÇÕES DA ESTRUTURA DAS RECEITAS //MudaPlano é um boolean,quando "true" ele reseta o RADIO "planoPolar" também
 	document.getElementById('QualPadrao').value = 1;
 	document.getElementById("razaoNumId").value = (1+Math.sqrt(5))/2; 
 	document.getElementById("razaoRangId").disabled = true;
 	document.getElementById("razaoNumId").disabled = true;	
 	document.getElementById('razaoRangId').value = document.getElementById('razaoNumId').value;
-	document.getElementById('DistBolinhas').value = 50000;
 	document.getElementById('numDeBolinhasId').value = 250;
 	document.getElementById('initNumBolinhasId').value = 1;
-	document.getElementById('planoPolar').checked = true;
-
+	if (MudaPlano) {		
+		document.getElementById('DistBolinhas').value = 50000;
+		document.getElementById('planoPolar').checked = true;
+	}
 	atualizarMiniMapa();
 }

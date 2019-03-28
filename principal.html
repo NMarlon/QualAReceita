@@ -8,6 +8,7 @@
 	<link rel="stylesheet" type="text/css" href="anim.css"><!--Ainda não usado-->
 	<link rel="icon" href="Imagens/QR.ico" type="image/x-icon" /><!--icone do Título-->
 	<script src="jsPrincipal.js"></script>
+	<script src="js.js"></script>
 	<title>Qual A Receita?</title><!--Até aqui código de sempre... Padrão-->
 </head>
 <body  onload="initReceitas(); MoverFundo();"> <!--EnterTab(); MoverImagemBackground();">-->
@@ -47,7 +48,7 @@
 				<div id="listSiteOpen" class="corPadraoFundo">
 					<a href="principal.html"><img src="Imagens/home.svg" class="icoMenu"><p class="textMenu">Home</p></a><!--Gosto de SVG, é escalável, não perde a qualidade... os icones podem ter formas simples-->
 					<a href="novaReceita.html"><img src="Imagens/newFile.svg" class="icoMenu"><p class="textMenu">Nova Receita</p></a>
-					<div onclick="sobreFunction()"><a><img src="Imagens/contato.svg" class="icoMenu"><p class="textMenu">Contato</p></a></div>
+					<div onclick="sobreFunction();"><a><img src="Imagens/contato.svg" class="icoMenu"><p class="textMenu">Contato</p></a></div>
 				</div>
 		</div>
 
@@ -73,7 +74,7 @@
 		</div>
 </div>
 
-	<span class="popuptext" id="sobre" onclick="sobreFunction()"><div class="divFecharSobre"><img src="Imagens/fechar.svg" class="fecharSobre"></div><span class="copyrightText">Copyright</span></span><!--Janela SOBRE, na aba CONTATO, no menu superior esquerdo... Vai ter E-mail, telefone etc... Fecha a Aba "SOBRE"-->
+	<span class="popuptext" id="sobre" onclick="sobreFunction();"><div class="divFecharSobre"><img src="Imagens/fechar.svg" class="fecharSobre"></div><span class="copyrightText">Copyright</span></span><!--Janela SOBRE, na aba CONTATO, no menu superior esquerdo... Vai ter E-mail, telefone etc... Fecha a Aba "SOBRE"-->
 
 
 

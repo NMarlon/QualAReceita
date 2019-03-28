@@ -10,6 +10,7 @@
 	<script type="text/javascript" src="loading-bar.js"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" type="text/javascript"></script>
 	<script src="jsConfig.js"></script>	
+	<script src="js.js"></script>	
 	<!--<script type="text/javascript"  src="jqueryBiblioteca.js"></script>-->
 	<title>Qual A Receita?</title><!--Até aqui código de sempre... Padrão-->
 </head>
@@ -23,7 +24,7 @@
 					<div id="listSiteOpen" class="corPadraoFundo">
 						<a href="principal.html"><img src="Imagens/home.svg" class="icoMenu"><p class="textMenu">Home</p></a><!--Gosto de SVG, é escalável, não perde a qualidade... os icones podem ter formas simples-->
 						<a href="novaReceita.html"><img src="Imagens/newFile.svg" class="icoMenu"><p class="textMenu">Nova Receita</p></a>
-						<div onclick="sobreFunction()"><a><img src="Imagens/contato.svg" class="icoMenu"><p class="textMenu">Contato</p></a></div>
+						<div onclick="sobreFunction();"><a><img src="Imagens/contato.svg" class="icoMenu"><p class="textMenu">Contato</p></a></div>
 					</div>
 			</div>
 
@@ -50,8 +51,8 @@
 	<div class="fundo">
 		<div class="caixaSeparacao"><h1>Receitas</h1><h3>Display</h3><!--Mais Tarde Colocar COLUNAS igual no Word, para não ficar com tanto espaço livre em branco no lado direito-->
 			<div id="PlanoId" class="radioDivisao">
-					<input type="radio" id="planoPolar" class="radioclass" name="planoName" checked="true">
-					<h4 class="radioclass">Plano Polar</h4>
+					<input type="radio" id="planoPolar" class="radioclass" name="planoName" >
+					<h4 class="radioclass">Galáxia</h4> <!--ANTIGO PlanoPolar... Achei mais charmoso chamar de galáxia-->
 			</div>					
 					<br><br>
 				
@@ -78,7 +79,7 @@
            	</div>
            
           	<p >Distância entre as receitas</p>
-			<input type="number" id="DistBolinhas" name="raio" min="0" step="1000" value="50000">	
+			<input type="number" id="DistBolinhas" name="raio" min="0" step="1000" value="12000">	
 			<p> Número de bolinhas no mini mapa</p>
 			<input type="number" name="numDeBolinhas" id="numDeBolinhasId" step="1" value="250">	
            	<!--<button type="button" name="atualizarMiniMapaInput"  onclick="atualizarMiniMapa()">Atualizar</button><br>-->
@@ -86,18 +87,20 @@
            	<input type="number" id="initNumBolinhasId" name="initNumBolinhasName" step="1" value="1">
            	<br><br><!--Melhorar Design-->           
          	<div class="radioDivisao"><!--Deixar Radio ao lado do h4 .radioclass-->
-			       	<input type="radio" id="planoCartesiano" name="planoName" class="radioclass" >
+			       	<input type="radio" id="planoCartesiano" name="planoName" class="radioclass" checked="true">
 			       	<h4 class="radioclass">Plano Cartesiano</h4>
 	        </div>
 	        <input type="number" id="distanciaX" value="2">
 	        <input type="number" id="distanciaY" value="2">
 	        
-           	<input type="reset" name="atualizarMiniMapaInput"  onclick="resetMapa()">
+           	<input type="reset" name="atualizarMiniMapaInput"  onclick="resetMapa(true)">
+           	<p>Tamanho do Minimapa</p>
+           	<input type="number" id="xCanvas" value="200" step="25" onload="document.getElementById('myCanvas').height=document.getElementById('xCanvas')value;"><!--TAMANHO DO MINIMAPA-->
+           	<input type="number" id="yCanvas" value="200" step="25" onload="document.getElementById('myCanvas').width=document.getElementById('yCanvas').value;"> 
+
 		</div>
 	</div>
-	<span class="popuptext" id="sobre" onclick="sobreFunction()"><div class="divFecharSobre"><img src="Imagens/fechar.svg" class="fecharSobre"></div><span class="copyrightText">Copyright</span></span><!--Janela SOBRE, na aba CONTATO, no menu superior esquerdo... Vai ter E-mail, telefone etc... Fecha a Aba "SOBRE"-->
-
-
+	<span class="popuptext" id="sobre" onclick="sobreFunction();"><div class="divFecharSobre"><img src="Imagens/fechar.svg" class="fecharSobre"></div><span class="copyrightText">Copyright</span></span><!--Janela SOBRE, na aba CONTATO, no menu superior esquerdo... Vai ter E-mail, telefone etc... Fecha a Aba "SOBRE"-->
 
 
 	

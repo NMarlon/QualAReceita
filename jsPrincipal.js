@@ -46,10 +46,6 @@ function MoverFundo(){
 	//	el.style.setProperty('--y', -e.offsetY + "px");
 	//});
 //}
-function sobreFunction() { //Abrir PopUp do Contato do Menu Superior Esquerdo
-    var popup = document.getElementById("sobre");
-    popup.classList.toggle("show");
-}
 
 function initReceitas(){ //Iniciar com algumas receitas (Por enquanto apenas para desenvolvimento)
 	var numDeReceitas = 1000;
