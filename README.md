@@ -1,6 +1,6 @@
 ﻿#Qual A Receita
 
---------------1. SOBRE O SITE------------------
+# --------------1. SOBRE O SITE------------------
 
 Meu objetivo com esse site é ter um site para buscar as receitas pelo o que eu tenho na geladeira e nos armários, da forma mais prática e rápida que possível. Eu simplesmente abrir o site, digitar os ingredientes e já saber tudo o que posso fazer com eles. Não vi isso em outros sites então acho isso uma novidade.
 
@@ -37,7 +37,7 @@ Em pauta tudo que vejo que pode dar certo e errado, pontos positivos e negativos
  - Aceitar colocar mais imagens por receita (Depende de quanto espaço tem disponível para colocar imagens)
  - Perguntas de contribuição - São perguntas para ajudar nos dados do site, como perguntar para o usuário se na receita foi usado microondas ou não (Material Necessário), mais tarde pode ser filtrado [Apenas receitas sem microondas] (caso não tenha um). Outro exemplo de Perguntas de contribuição é ao se adicionar um novo ingrediente que não ainda tinha sido adicionada no sistema do Site, após um User criar uma receita e adicionar uma receita que não havia antes no sistema, pode ser feito perguntas sobre aquele ingrediente, como por exemplo, no caso do açúcar, Qual valor energético? E o VD? Quantos carboidratos? Fazendo apenas uma pergunta por vez... Seria legal também deixar um botão pra quem quisesse responder à essas perguntas para contribuir para o site (e ter a própria tabela nutricional diária registrada no PC
 
-------------------2. Design----------------
+# ------------------2. Design----------------
 
 Sobre o Título do Site as minhas sugestões foram:
 - Qual Receita? (com ponto de interrogação)
@@ -90,7 +90,7 @@ As CORES eu preferiria algo tipo, McDonalds ou Burguer King (redes de comida), V
 
 
 
------------------------ 3. ESTRUTURA -----------------------------------------
+# ----------------------- 3. ESTRUTURA -----------------------------------------
 
 HOME - Onde está o Feed de Receitas e onde o User pode buscar novas receitas
 
@@ -197,7 +197,7 @@ Dispositivos menores, Tablet/Smartphones:
 
 
 
-========== CONFIGURAÇÕES DO SITE (pelo user) ==========
+## ========== CONFIGURAÇÕES DO SITE (pelo user) ==========
 
 PERFIL>CONFIGURAÇÕES
 
@@ -217,7 +217,7 @@ ON|OFF - Aceitar receber receitas semelhantes no feed - Ao habilitar pode-se apa
 
 
 
----------------------- 4. DETALHES ------------------------
+# ---------------------- 4. DETALHES ------------------------
 
 
 Ao Logar pela primeira vez:
