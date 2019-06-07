@@ -4,6 +4,10 @@
 
 
 */
+html{	
+ 	scroll-behavior: smooth;
+}
+
 
 #menu{ /*CSS da Barra Superior*/
 	display: flex;
@@ -35,7 +39,6 @@ body{ /*É do body geral mesmo*/
 	height: 60%;
 	margin: auto;
 }
-
 
 
 .inputPesq{/*caixa de texto PESQUISA*/

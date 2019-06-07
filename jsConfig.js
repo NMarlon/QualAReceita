@@ -47,6 +47,7 @@ function atualizarMiniMapa(){ //Iniciar com algumas receitas (Por enquanto apena
 
     var numDeBolinhas = document.getElementById('numDeBolinhasId').value;
 
+	let dist =  (150/50000)*document.getElementById('DistBolinhas').value;
     let iInit = 1; //Valor Inicial da contagem:
     if(document.getElementById("planoPolar").checked == true){//Se for Plano Polar
 		
@@ -65,11 +66,11 @@ function atualizarMiniMapa(){ //Iniciar com algumas receitas (Por enquanto apena
 			let x = r*Math.cos(angulo);//coordenadas polares para coordenadas cartesianas
 			let y = r*Math.sin(angulo);
 			ctx.beginPath();
-			ctx.arc(x+100,y+100,4.8,0,2*Math.PI);
+			ctx.arc(x+document.getElementById('myCanvas').height/2,y+document.getElementById('myCanvas').width/2,4.8,0,2*Math.PI);
 			ctx.stroke();
 			//document.getElementById('receitasFeed'+i).style.left = x; //x
 			//document.getElementById('receitasFeed'+i).style.bottom = y;//y
-			let rBolinhas = (45/50000)*document.getElementById('DistBolinhas').value; // 50000 é o raio padrão das RECEITAS, 45 é o padrão para esse canvas... Regra de 3, 50000 -> 45
+			let rBolinhas = dist; // 50000 é o raio padrão das RECEITAS, 45 é o padrão para esse canvas... Regra de 3, 50000 -> 45
 			r = Math.sqrt(j*rBolinhas); //j * A distância entre eles
 			bar2.set((i-iInit) / (numDeBolinhas-iInit));//Função da Porcentagem
 		}
@@ -78,13 +79,12 @@ function atualizarMiniMapa(){ //Iniciar com algumas receitas (Por enquanto apena
 		//x=0;
 		//y=0;
 		let contagem = 1;
-		let dist =  (45/50000)*document.getElementById('DistBolinhas').value;
 
 		let xAnt = 0;
 		let yAnt = 0;
 	//	while (i <= numDeBolinhas) {
 	//	distanciaCartesiana(ctx,x,y);
-
+		dist/=3.2;
 
 		var passos = 1;
 		// coordenadas do centro da espiral

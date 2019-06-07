@@ -16,6 +16,9 @@
     border-radius: 50%;
     position: absolute;
     transition: transform .333s ;    
+
+    shape-outside: circle();
+    -webkit-shape-outside: circle();
 	/*transition: background-image 0.3s ease-in-out;*/
 }
 
@@ -28,6 +31,7 @@
 
 	transform: scale(1.1);
 }
+
 
 .receitas:hover .imgReceita{
 	opacity: 0.5;

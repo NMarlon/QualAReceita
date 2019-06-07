@@ -74,9 +74,7 @@ function initReceitas(){ //Iniciar com algumas receitas (Por enquanto apenas par
 	//const pi = Math.PI;//3.14159265358979323846264338327950288;
 	var angulo = 1;//2*pi; //Angulo de rotação
 	let velocProporcao = 0.0003;//Apenas para teste
-	let o = 1.55;
-	//	window.setInterval(() => {
-		o = o + velocProporcao;
+
 		for (let i = 1; i <= numDeReceitas; i++) {
 			let j = i + 20;
 			var proporcao = phi;//o; //PHI; user vai poder ajustar mais tarde nas configurações -------- AINDA TEM QUE CRIAR PÁGINA DE CONFIGURAÇÕES
@@ -94,9 +92,6 @@ function initReceitas(){ //Iniciar com algumas receitas (Por enquanto apenas par
 		//textnode = document.createTextNode(angulo);
 		//t.appendChild(textnode,document.getElementById('razao'));  
 
-		if (o > 5 || o < 0) {
-			velocProporcao *= (-1);
-		}
 
 	//}, 1000/60);
 }
@@ -104,6 +99,142 @@ function initReceitas(){ //Iniciar com algumas receitas (Por enquanto apenas par
 function loopPosicaoReceitas(){
 
 }
+
+//!!!!!!!!! 	FUNÇÃO MOVER COM MOUSE     !!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+//document.getElementById("body").onmousemove = function(event) {myFunction(event)};
+//
+//function myMoveFunction(e) {
+//  var x = e.clientX;
+//  var y = e.clientY;
+//  var coor = "Coordinates: (" + x + "," + y + ")";
+//  document.getElementById("coord").innerHTML = coor;
+//}
+
+
+
+//$( "#body" ).mousemove(function( event ) {
+//  //var msg = "Handler for .mousemove() called at ";
+//  //msg += event.pageX + ", " + event.pageY;
+//  //$( "#coord" ).append( "<div>" + msg + "</div>" );
+//
+//  var coor = "Coordinates: (" + event.pageX + "," + event.pageY + ")";
+//  document.getElementById("coord").innerHTML = coor;
+//});
+
+
+
+
+function myMoveFunction(event) {
+	var x = event.clientX;
+	var y = event.clientY;
+	var coor = "X coords: " + document.getElementById('ArrastarFundo').scrollLeft + ", Y coords: " + document.getElementById('ArrastarFundo').scrollTop;
+	document.getElementById("coord").innerHTML = coor;
+	wdocument.getElementsByTagName('html').scrollLeft = x;
+	//document.getElementsByTagName('html').scrollTop = y;
+	//window.scrollTo(x,y);
+	//document.getElementById('html').scrollIntoView();
+}
+
+function clearCoor() {
+  document.getElementById("coord").innerHTML = "";
+}
+
+//$(function() { 
+//    $("#ArrastarFundo").draggable(); 
+//});
+
+
+
+//9ªTentativa
+//document.addEventListener( 'mousedown', onMouseDown, false );
+//
+//function onMouseDown(e) {
+//    e.preventDefault(); //prevents browser to follow links or move images
+//    // code to execute on mouse click
+//    onMouseMove(e);
+//    onMouseUp(e);
+//}
+//
+//document.addEventListener( 'mousemove', onMouseMove, false );
+//
+//function onMouseMove(e) {
+//    // code to execute on mouse mouse move
+//    var x = event.clientX;
+//	var y = event.clientY;
+//	window.scrollTo(x,y);
+//}
+//
+//document.addEventListener( 'mouseup', onMouseUp, false );
+//
+//function onMouseUp(e) {
+//    // code to execute on mouse mouse up
+//}
+//$('a').click(function() {
+//   window.location = this.href;
+//});
+
+//$('#HomePrincipal').mousedown(function(ev){ //Não faz nada, deveria mover o div principal
+//    console.log(ev.target.id+' pressed');
+//    if ( !$(ev.target).data("ui-draggable") ) {
+//        $(ev.target).draggable();
+//        $(ev.target).trigger(ev);
+//    }
+//});
+//$("#HomePrincipal").draggable();
+
+
+
+//https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_element_scrolltop_draw_svg Vai ser útil mais tarde quando for carregar as receitas, ao chegar Num limite de scroll, ele vai carregar mais receitas
+
+
+
+
+
+
+////jsPrincipal.js:158 Uncaught TypeError: Cannot set property 'onmousedown' of null
+//dragElement(document.getElementById("ArrastarFundo"));
+//
+//function dragElement(elmnt) {
+//  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+//  if (document.getElementById("ArrastarFundo")) {
+//    /* if present, the header is where you move the DIV from:*/
+//    document.getElementById("ArrastarFundo").onmousedown = dragMouseDown;
+//  } else {
+//    /* otherwise, move the DIV from anywhere inside the DIV:*/
+//    elmnt.onmousedown = dragMouseDown;
+//  }
+//
+//  function dragMouseDown(e) {
+//    e = e || window.event;
+//    e.preventDefault();
+//    // get the mouse cursor position at startup:
+//    pos3 = e.clientX;
+//    pos4 = e.clientY;
+//    document.onmouseup = closeDragElement;
+//    // call a function whenever the cursor moves:
+//    document.onmousemove = elementDrag;
+//  }
+//
+//  function elementDrag(e) {
+//    e = e || window.event;
+//    e.preventDefault();
+//    // calculate the new cursor position:
+//    pos1 = pos3 - e.clientX;
+//    pos2 = pos4 - e.clientY;
+//    pos3 = e.clientX;
+//    pos4 = e.clientY;
+//    // set the element's new position:
+//    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+//    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+//  }
+//
+//  function closeDragElement() {
+//    /* stop moving when mouse button is released:*/
+//    document.onmouseup = null;
+//    document.onmousemove = null;
+//  }
+//}
+//
 
 
 //function posicaoReceitasjs(){
