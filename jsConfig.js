@@ -10,16 +10,16 @@ function iniciar(){
 		case '1':
 			document.getElementById("razaoNumId").value = (1+Math.sqrt(5))/2; //PHI 1.618033988
 			document.getElementById("razaoNumId").disabled = true;		
-	   		document.getElementById("razaoRangId").disabled = true;	   		
+			document.getElementById("razaoRangId").disabled = true;	   		
 			document.getElementById('razaoRangId').value = document.getElementById('razaoNumId').value;
-	   	break;
-		case '2':
+			break;
+			case '2':
 			document.getElementById("razaoRangId").disabled = false;		
 			document.getElementById("razaoNumId").disabled =  false;
-		break;
-		default:
-		alert('ERRO AO INICIAR, #QualPadrao, jsConfig.js linha: 9... Phi, outros ou o que?');
-	}
+			break;
+			default:
+			alert('ERRO AO INICIAR, #QualPadrao, jsConfig.js linha: 9... Phi, outros ou o que?');
+		}
 
 	//document.getElementById('myCanvas').height = 200; //!!!!!!!!Largura e Altura do Canvas (QUANDO O BANCO DE DADOS ESTIVER PRONTO, 200 SE TORNA O QUE FOI SALVO PELO USER DA ULTIMA VEZ)!!!!!!!!!!!	
 	//document.getElementById('myCanvas').width = 200;
@@ -47,10 +47,10 @@ function atualizarMiniMapa(){ //Iniciar com algumas receitas (Por enquanto apena
 
     var numDeBolinhas = document.getElementById('numDeBolinhasId').value;
 
-	let dist =  (150/50000)*document.getElementById('DistBolinhas').value;
+    let dist =  (150/50000)*document.getElementById('DistBolinhas').value;
     let iInit = 1; //Valor Inicial da contagem:
     if(document.getElementById("planoPolar").checked == true){//Se for Plano Polar
-		
+
 		//document.getElementById('receitasFeed').id = 'receitasFeed'+i;
 		//setTimeout(loopPOsicao Receitas, 2); //talvez precise
 		//ESTRUTURA PHI
@@ -84,9 +84,9 @@ function atualizarMiniMapa(){ //Iniciar com algumas receitas (Por enquanto apena
 		let yAnt = 0;
 	//	while (i <= numDeBolinhas) {
 	//	distanciaCartesiana(ctx,x,y);
-		dist/=3.2;
+	dist/=3.2;
 
-		var passos = 1;
+	var passos = 1;
 		// coordenadas do centro da espiral
 		var x = 10;
 		var y = 10;
@@ -94,62 +94,62 @@ function atualizarMiniMapa(){ //Iniciar com algumas receitas (Por enquanto apena
 		let yCanvas = document.getElementById('yCanvas').value/2;
 		let init = 1;
 		let k = 1;
-	    distanciaCartesiana(ctx, xCanvas, yCanvas);
+		distanciaCartesiana(ctx, xCanvas, yCanvas);
         for (let i=1; i<numDeBolinhas; ++i){ //numDeBolinhas%8
 
         	for (var j = init; j < contagem  && k <numDeBolinhas; j++) {
         		distanciaCartesiana(ctx, xCanvas+dist*j, yCanvas+dist*k);      		       		
-      		}
-      		i+=j;
+        	}
+        	i+=j;
         	for (var j = init; j < contagem  && k <numDeBolinhas; j++) {
         		distanciaCartesiana(ctx, xCanvas+dist*k, yCanvas+dist*j);
         	}
-      		i+=j;
+        	i+=j;
 
         	for (var j = init; j < contagem  && k <numDeBolinhas; j++) {
         		distanciaCartesiana(ctx, xCanvas-dist*j, yCanvas-dist*k);        		
         	}
-      		i+=j;
-	       	for (var j = init; j < contagem && k <numDeBolinhas; j++) {
-	       		distanciaCartesiana(ctx, xCanvas-dist*k, yCanvas-dist*j);
-	       	}
-      		i+=j;
-	       	for (var j = init; j < contagem && k <numDeBolinhas; j++) {
-	       		distanciaCartesiana(ctx, xCanvas+dist*j, yCanvas-dist*k);
-	       	}
-      		i+=j;
-	       	for (var j = init; j < contagem && k <numDeBolinhas; j++) {
-	       		distanciaCartesiana(ctx, xCanvas+dist*k, yCanvas-dist*j);
-	       	}	
-      		i+=j;       	
-	       	for (var j = init; j < contagem && k <numDeBolinhas; j++) {
-	       		distanciaCartesiana(ctx, xCanvas-dist*j, yCanvas+dist*k);
-	       	}
-      		i+=j;
-	       	for (var j = init; j < contagem && k <numDeBolinhas; j++) {
-	       		distanciaCartesiana(ctx, xCanvas-dist*k, yCanvas+dist*j);
-	       	}
-      		i+=j;
-	       	distanciaCartesiana(ctx, xCanvas+dist*k, yCanvas+dist*k);
-	       	distanciaCartesiana(ctx, xCanvas-dist*k, yCanvas+dist*k);
-	       	distanciaCartesiana(ctx, xCanvas+dist*k, yCanvas-dist*k);
-	       	distanciaCartesiana(ctx, xCanvas-dist*k, yCanvas-dist*k);
-     	  	distanciaCartesiana(ctx, xCanvas, yCanvas+dist*k);
-     	  	distanciaCartesiana(ctx,xCanvas+dist*k, yCanvas);        	
-     	  	distanciaCartesiana(ctx,xCanvas, yCanvas-dist*k);
-       		distanciaCartesiana(ctx,xCanvas-dist*k, yCanvas);
-       		i+=8;
-       		k++;
-       		
+        	i+=j;
+        	for (var j = init; j < contagem && k <numDeBolinhas; j++) {
+        		distanciaCartesiana(ctx, xCanvas-dist*k, yCanvas-dist*j);
+        	}
+        	i+=j;
+        	for (var j = init; j < contagem && k <numDeBolinhas; j++) {
+        		distanciaCartesiana(ctx, xCanvas+dist*j, yCanvas-dist*k);
+        	}
+        	i+=j;
+        	for (var j = init; j < contagem && k <numDeBolinhas; j++) {
+        		distanciaCartesiana(ctx, xCanvas+dist*k, yCanvas-dist*j);
+        	}	
+        	i+=j;       	
+        	for (var j = init; j < contagem && k <numDeBolinhas; j++) {
+        		distanciaCartesiana(ctx, xCanvas-dist*j, yCanvas+dist*k);
+        	}
+        	i+=j;
+        	for (var j = init; j < contagem && k <numDeBolinhas; j++) {
+        		distanciaCartesiana(ctx, xCanvas-dist*k, yCanvas+dist*j);
+        	}
+        	i+=j;
+        	distanciaCartesiana(ctx, xCanvas+dist*k, yCanvas+dist*k);
+        	distanciaCartesiana(ctx, xCanvas-dist*k, yCanvas+dist*k);
+        	distanciaCartesiana(ctx, xCanvas+dist*k, yCanvas-dist*k);
+        	distanciaCartesiana(ctx, xCanvas-dist*k, yCanvas-dist*k);
+        	distanciaCartesiana(ctx, xCanvas, yCanvas+dist*k);
+        	distanciaCartesiana(ctx,xCanvas+dist*k, yCanvas);        	
+        	distanciaCartesiana(ctx,xCanvas, yCanvas-dist*k);
+        	distanciaCartesiana(ctx,xCanvas-dist*k, yCanvas);
+        	i+=8;
+        	k++;
+
         	contagem+=1;
             //g.drawLine(xCanvas/2+10*i,     yCanvas/2-10*i,         xCanvas/2+10*i,     yCanvas/2+10*(i+1));
             //g.drawLine(xCanvas/2+10*i,     yCanvas/2+10*(i+1), xCanvas/2-10*(i+1), yCanvas/2+10*(i+1));
             //g.drawLine(xCanvas/2-10*(i+1), yCanvas/2+10*(i+1), xCanvas/2-10*(i+1), yCanvas/2-10*(i+1));
             //g.drawLine(xCanvas/2-10*(i+1), yCanvas/2-10*(i+1), xCanvas/2+10*(i+1), yCanvas/2-10*(i+1));
             
-           
+
         }
-			
+
 
 
 
@@ -169,50 +169,50 @@ function distanciaCartesiana(ctx,x,y){
 
 
 $(document).ready(function(){ //Ao mudar algum INPUT vai mudar todo o miniMapa, Sem precisar do botão ATUALIZAR
-    $('#QualPadrao').change(function(){
-    	switch(document.getElementById('QualPadrao').value) {
-    		case '1':
-    			const phi = (1+Math.sqrt(5))/2;
-				document.getElementById("razaoNumId").value = phi;
-   				document.getElementById("razaoRangId").disabled = true;
-				document.getElementById("razaoNumId").disabled = true;
-    		break;
-    		case '2':
-				document.getElementById("razaoNumId").disabled =  false;				
-				document.getElementById('razaoRangId').disabled = false;
-    		break;
-    		default:
-    	}
-	   	$('#razaoNumId').change(function(){
+	$('#QualPadrao').change(function(){
+		switch(document.getElementById('QualPadrao').value) {
+			case '1':
+			const phi = (1+Math.sqrt(5))/2;
+			document.getElementById("razaoNumId").value = phi;
+			document.getElementById("razaoRangId").disabled = true;
+			document.getElementById("razaoNumId").disabled = true;
+			break;
+			case '2':
+			document.getElementById("razaoNumId").disabled =  false;				
+			document.getElementById('razaoRangId').disabled = false;
+			break;
+			default:
+		}
+		$('#razaoNumId').change(function(){
 			document.getElementById('razaoRangId').value = document.getElementById('razaoNumId').value;
-	   		atualizarMiniMapa();
-	   	});
-	   
-    });
-    $('#DistBolinhas').change(function(){
-	   	atualizarMiniMapa();
+			atualizarMiniMapa();
+		});
+
+	});
+	$('#DistBolinhas').change(function(){
+		atualizarMiniMapa();
 	});
 	$('#numDeBolinhasId').change(function(){
-	   	atualizarMiniMapa();
+		atualizarMiniMapa();
 	});
 	$('#initNumBolinhasId').change(function(){
-	   	atualizarMiniMapa();
+		atualizarMiniMapa();
 	});
 
 	$('#razaoRangId').change(function(){
 		document.getElementById('razaoNumId').value = document.getElementById('razaoRangId').value;
-	   	atualizarMiniMapa();
+		atualizarMiniMapa();
 	});
 	//Plano CARTESIANO
 
 	$('input[name=planoName]').change( function() {
 		if (document.getElementById('planoPolar').checked==true) { //PlanoPolar "true", Valor padrão para PlanoPolar
 			resetMapa(true);
-		}else{			
-			document.getElementById('DistBolinhas').value = 12000;
-	   		resetMapa(false);
-		}
-	});
+	}else{			
+		document.getElementById('DistBolinhas').value = 12000;
+		resetMapa(false);
+	}
+});
 	$('#distanciaX').change(function(){
 		atualizarMiniMapa();
 	});
@@ -232,17 +232,31 @@ $(document).ready(function(){ //Ao mudar algum INPUT vai mudar todo o miniMapa, 
 
 
 
-function resetMapa(MudaPlano){ // RESET DAS CONFIGURAÇÕES DA ESTRUTURA DAS RECEITAS //MudaPlano é um boolean,quando "true" ele reseta o RADIO "planoPolar" também
-	document.getElementById('QualPadrao').value = 1;
-	document.getElementById("razaoNumId").value = (1+Math.sqrt(5))/2; 
-	document.getElementById("razaoRangId").disabled = true;
-	document.getElementById("razaoNumId").disabled = true;	
-	document.getElementById('razaoRangId').value = document.getElementById('razaoNumId').value;
-	document.getElementById('numDeBolinhasId').value = 250;
-	document.getElementById('initNumBolinhasId').value = 1;
-	if (MudaPlano) {		
-		document.getElementById('DistBolinhas').value = 50000;
-		document.getElementById('planoPolar').checked = true;
+function resetMapa(MudaPlano){ // RESET DAS CONFIGURAÇÕES DA ESTRUTURA DAS RECEITAS //MudaPlano quando "true" ele reseta o RADIO "planoPolar" também
+document.getElementById('QualPadrao').value = 1;
+document.getElementById("razaoNumId").value = (1+Math.sqrt(5))/2; 
+document.getElementById("razaoRangId").disabled = true;
+document.getElementById("razaoNumId").disabled = true;	
+document.getElementById('razaoRangId').value = document.getElementById('razaoNumId').value;
+document.getElementById('numDeBolinhasId').value = 250;
+document.getElementById('initNumBolinhasId').value = 1;
+if (MudaPlano) {		
+//	if (document.getElementById('Girassol').disabled==false) {
+//		document.getElementById('DistBolinhas').value = 12000;
+//}else{
+	document.getElementById('DistBolinhas').value = 12000;
+	document.getElementById('planoPolar').checked = true;
+//	}
+}
+atualizarMiniMapa();
+}
+function atualizarQualPadrao(num){
+	switch (num){
+		case 0:
+					
+		break;
+		case 1:
+			document.getElementById("razaoNumId").value = (1+Math.sqrt(5))/2;
+		break;
 	}
-	atualizarMiniMapa();
 }
