@@ -1,5 +1,7 @@
 ﻿#Qual A Receita
 https://trello.com/b/l2RAaVaT/qualareceita Kanban do Site
+
+Site postado (em andamento): http://qualareceita.dx.am/
 # --------------1. SOBRE O SITE------------------
 
 Meu objetivo com esse site é ter um site para buscar as receitas pelo o que eu tenho na geladeira e nos armários, da forma mais prática e rápida que possível. Eu simplesmente abrir o site, digitar os ingredientes e já saber tudo o que posso fazer com eles. Não vi isso em outros sites então acho isso uma novidade.
